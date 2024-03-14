@@ -1,0 +1,26 @@
+/* body {
+    background-color: #1d1d1d;
+    color: #fff;
+    font-family: "Signika Negative", sans-serif;
+    margin: 0;
+} */
+
+.box {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #28a92b;
+    font-weight: 600;
+    color: #fff;
+}
+
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* min-height: 100vh; */
+}
