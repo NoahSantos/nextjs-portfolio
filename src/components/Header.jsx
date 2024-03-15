@@ -1,11 +1,10 @@
 "use client"
 import React, { useRef } from "react";
 import { gsap } from "gsap";
-// import { CSSPlugin } from 'gsap/CSSPlugin'
-// gsap.registerPlugin(CSSPlugin)
 import styles from './header.module.css';
+import Link from 'next/link'
 
-export default function Header() {
+export default function Header({activeLink}) {
     const bar = useRef();
     let box = useRef([]);
     let count = useRef(1);
@@ -18,9 +17,9 @@ export default function Header() {
             y: -500, 
             });
             await gsap.to(box.current, {
-                duration: 0.4, 
+                duration: 0.3, 
                 x: -200, 
-                stagger: 0.025,
+                stagger: 0.015,
                 ease: "back.inOut"
             });
             count.current = 1;
@@ -28,7 +27,7 @@ export default function Header() {
             await gsap.to(box.current, {
                 duration: 0.3, 
                 x: -50, 
-                stagger: 0.025,
+                stagger: 0.015,
                 ease: "back.inOut"
             });
             gsap.to(bar.current, {
@@ -72,8 +71,16 @@ export default function Header() {
 
             </div>
             <div ref={bar} className={styles.navbar}></div>
+            <div className={styles.linkCont}>
+                <ul className={styles.linkList}>
+                    {activeLink === 'home' ? <li><Link className={styles.activeList} href="/">Home</Link></li> : <li><Link className={styles.list} href="/">Home</Link></li>}
+                    <li><Link className={styles.list} href="/about">About</Link></li>
+                    <li><Link className={styles.list} href="/resume">Resume</Link></li>
+                    <li><Link className={styles.list} href="/projects">Projects</Link></li>
+                </ul>
+            </div>
             <div className={styles.app}>
-                {Array(36).fill(0).map((x, i) => (
+                {Array(45).fill(0).map((x, i) => (
                     <div ref={pushRef} className={styles.box} key={i} onClick={openNav}></div>
                     // <div ref={pushRef} className={styles.box} key={i} onMouseEnter={onEnter} onMouseLeave={onLeave}></div>
                 ))}

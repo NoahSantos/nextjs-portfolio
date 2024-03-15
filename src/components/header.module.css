@@ -25,6 +25,7 @@
 }
 
 .navbar{
+    z-index: 2;
     background: #fff;
     pointer-events: none;
     position: absolute;
@@ -32,6 +33,31 @@
     width: 0.5rem;
     height: 25rem;
     border-radius: 10rem;
-    z-index: 3;
     transform: translateY(-500px);
+}
+
+.linkCont{
+    z-index: 3;
+    position: absolute;
+    left: 4rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.linkList{
+    list-style-type: none;
+}
+
+.list{
+    margin: 2rem 0rem 2rem 0rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.activeList{
+    margin: 2rem 0rem 2rem 0rem;
+    font-size: 1.5rem;
+    color: #fff;
+    padding-left: 1rem;
 }
