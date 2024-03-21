@@ -31,7 +31,7 @@
     position: absolute;
     left: 2rem;
     width: 0.5rem;
-    height: 25rem;
+    height: 50%;
     border-radius: 10rem;
     transform: translateY(-500px);
 }
@@ -39,25 +39,28 @@
 .linkCont{
     z-index: 3;
     position: absolute;
-    left: 4rem;
-    height: 15rem;
-    display: flex;
-    flex-direction: column;
+    left: 4rem; top: 15vh;
+    height: 18rem;
+    transform: translateX(-300px);
 }
 
 .linkList{
     list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
 }
 
 .list{
     margin: 2rem 0rem 2rem 0rem;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #fff;
 }
 
 .activeList{
     margin: 2rem 0rem 2rem 0rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: #fff;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
 }
