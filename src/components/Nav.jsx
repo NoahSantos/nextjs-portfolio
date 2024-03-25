@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef } from "react";
 import { gsap } from "gsap";
-import { RxHamburgerMenu } from "react-icons/rx";
+import { IoMenuOutline } from "react-icons/io5";
 import styles from './nav.module.css';
 import Link from 'next/link'
 
@@ -38,7 +38,7 @@ export default function Nav({activeLink}) {
             });
             gsap.to(bar.current, {
                 duration: 0.2, 
-                y: '10vh', 
+                y: '4rem', 
             });
             gsap.to(links.current, {
                 duration: 0.3, 
@@ -84,9 +84,9 @@ export default function Nav({activeLink}) {
             <div ref={links} className={styles.linkCont}>
                 <ul className={styles.linkList}>
                     {activeLink === 'home' ? <li><Link className={styles.activeList} href="/">Home</Link></li> : <li><Link className={styles.list} href="/">Home</Link></li>}
-                    <li><Link className={styles.list} href="/about">About</Link></li>
-                    <li><Link className={styles.list} href="/resume">Resume</Link></li>
-                    <li><Link className={styles.list} href="/projects">Projects</Link></li>
+                    {activeLink === 'about' ? <li><Link className={styles.activeList} href="/about">About</Link></li> : <li><Link className={styles.list} href="/about">About</Link></li>}
+                    {activeLink === 'resume' ? <li><Link className={styles.activeList} href="/resume">Resume</Link></li> : <li><Link className={styles.list} href="/resume">Resume</Link></li>}
+                    {activeLink === 'projects' ? <li><Link className={styles.activeList} href="/projects">Projects</Link></li> : <li><Link className={styles.list} href="/projects">Projects</Link></li>}
                 </ul>
             </div>
             <div className={styles.app}>
@@ -96,7 +96,10 @@ export default function Nav({activeLink}) {
                 ))}
             </div>
 
-            <RxHamburgerMenu className={styles.mobileBurger}></RxHamburgerMenu>
+            <IoMenuOutline className={styles.mobileBurger}></IoMenuOutline>
+            <div className={styles.mobileNav}>
+                <div className={styles.mobileList}></div>
+            </div>
         </>
     );
 }

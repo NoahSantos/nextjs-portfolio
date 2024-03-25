@@ -41,7 +41,7 @@
 .linkCont{
     z-index: 3;
     position: absolute;
-    left: 4rem; top: 7.5rem;
+    left: 4rem; top: 6rem;
     height: 18rem;
     transform: translateX(-300px);
 }
@@ -72,7 +72,7 @@
     padding-left: 1rem;
 }
 
-.mobileNav, .mobileBurger{
+.mobileNav, .mobileBurger, .mobileList{
     display: none;
 }
 
@@ -82,13 +82,21 @@
     }
 
     .mobileNav{
+        border-radius: 100%;
+        width: 10rem;
+        height: 10rem;
+        background-color: #181818;
+        transform: translate(-100px, -100px);
+    }
+
+    .mobileList{
 
     }
 
     .mobileBurger{
         display: block;
         color: white;
-        font-size: 2rem;
+        font-size: 2.5rem;
         position: absolute;
         left: 1rem;
         top: 0.25rem;
