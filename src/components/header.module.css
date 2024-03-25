@@ -31,9 +31,9 @@
     position: absolute;
     left: 2rem;
     width: 0.5rem;
-    height: 50%;
+    height: 75%;
     border-radius: 10rem;
-    transform: translateY(-500px);
+    transform: translateY(-800px);
 }
 
 .linkCont{

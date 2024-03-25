@@ -19,7 +19,7 @@ export default function Header({activeLink}) {
             });
             await gsap.to(bar.current, {
             duration: 0.2, 
-            y: -500, 
+            y: -800, 
             });
             gsap.to(box.current, {
                 duration: 0.3, 
