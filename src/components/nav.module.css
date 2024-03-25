@@ -8,18 +8,20 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    pointer-events: auto;
 }
 
 .app {
     width: 250px;
-    height: 94vh;
+    height: calc(100% - 3rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
+    pointer-events: none;
 }
 
 .topBar{
-    height: 6vh;
+    height: 3rem;
     background-color: #003789;
     border-bottom: 3px solid black;
 }
@@ -39,7 +41,7 @@
 .linkCont{
     z-index: 3;
     position: absolute;
-    left: 4rem; top: 15vh;
+    left: 4rem; top: 7.5rem;
     height: 18rem;
     transform: translateX(-300px);
 }
@@ -50,17 +52,45 @@
     flex-direction: column;
     justify-content: space-evenly;
     height: 100%;
+    pointer-events: auto;
 }
 
 .list{
     margin: 2rem 0rem 2rem 0rem;
-    font-size: 1.75rem;
+    font-size: 1.60rem;
     color: #fff;
+}
+
+.list:hover, .activeList:hover {
+    font-size: 2rem;
 }
 
 .activeList{
     margin: 2rem 0rem 2rem 0rem;
-    font-size: 2rem;
+    font-size: 1.75rem;
     color: #fff;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
+}
+
+.mobileNav, .mobileBurger{
+    display: none;
+}
+
+@media (max-height: 525px), (max-width: 660px) {
+    .navbar, .linkCont, .app {
+        display: none;
+    }
+
+    .mobileNav{
+
+    }
+
+    .mobileBurger{
+        display: block;
+        color: white;
+        font-size: 2rem;
+        position: absolute;
+        left: 1rem;
+        top: 0.25rem;
+    }
 }

@@ -1,11 +1,11 @@
 "use client";
-import Header from '../components/Header';
+import Nav from '../components/Nav';
 import Contact from '../components/Contact';
 
 export default function Page() {
   return (
     <>
-      <Header activeLink='home'></Header>
+      <Nav activeLink='home' />
       <Contact/>
     </>
   )

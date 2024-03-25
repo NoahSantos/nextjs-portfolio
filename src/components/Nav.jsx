@@ -1,10 +1,11 @@
 "use client"
 import React, { useRef } from "react";
 import { gsap } from "gsap";
-import styles from './header.module.css';
+import { RxHamburgerMenu } from "react-icons/rx";
+import styles from './nav.module.css';
 import Link from 'next/link'
 
-export default function Header({activeLink}) {
+export default function Nav({activeLink}) {
     const bar = useRef();
     const links = useRef();
     let box = useRef([]);
@@ -89,11 +90,13 @@ export default function Header({activeLink}) {
                 </ul>
             </div>
             <div className={styles.app}>
-                {Array(45).fill(0).map((x, i) => (
+                {Array(40).fill(0).map((x, i) => (
                     <div ref={pushRef} className={styles.box} key={i} onClick={openNav}></div>
                     // <div ref={pushRef} className={styles.box} key={i} onMouseEnter={onEnter} onMouseLeave={onLeave}></div>
                 ))}
             </div>
+
+            <RxHamburgerMenu className={styles.mobileBurger}></RxHamburgerMenu>
         </>
     );
 }
