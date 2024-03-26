@@ -1,18 +1,22 @@
 "use client"
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
-import { IoMenuOutline } from "react-icons/io5";
+import { IoMenuOutline, IoClose } from "react-icons/io5";
 import styles from './nav.module.css';
 import Link from 'next/link'
 
 export default function Nav({activeLink}) {
-    const bar = useRef();
-    const links = useRef();
+    let bar = useRef();
+    let links = useRef();
     let box = useRef([]);
     let count = useRef(1);
+    let mobile = useRef();
+    let mobileList = useRef([]);
     const pushRef = (el) => box.current.push(el)
+    const mobilePushRef = (el) => mobileList.current.push(el)
 
     const openNav = async() => {
+        // closes nav
         if(count.current === 0){
             await gsap.to(links.current, {
                 duration: 0.2, 
@@ -29,6 +33,7 @@ export default function Nav({activeLink}) {
                 ease: "back.inOut"
             });
             count.current = 1;
+        // open nav
         }else{
             await gsap.to(box.current, {
                 duration: 0.3, 
@@ -46,8 +51,40 @@ export default function Nav({activeLink}) {
             });
             count.current = 0;
         }
-
     };
+
+    const openMobile = async()=>{
+        console.log(mobileList.current)
+        // closes nav
+        if(count.current === 0){
+            await gsap.to(mobileList.current, {
+                duration: 0.15, 
+                x: -200,
+                stagger: 0.05,
+                ease: "back.inOut"
+            });
+            gsap.to(mobile.current, {
+                duration: 0.2,  
+                width: 0,
+                height: 0,
+            });
+            count.current = 1;
+        // open nav
+        }else{
+            await gsap.to(mobile.current, {
+                duration: 0.2,  
+                width: '125vw',
+                height: '125vh',
+            });
+            gsap.to(mobileList.current, {
+                duration: 0.3, 
+                x: 200,
+                stagger: 0.05,
+                ease: "back.inOut"
+            });
+            count.current = 0;
+        }
+    }
     
     const onEnter = async() => {
         await gsap.to(box.current, {
@@ -96,9 +133,18 @@ export default function Nav({activeLink}) {
                 ))}
             </div>
 
-            <IoMenuOutline className={styles.mobileBurger}></IoMenuOutline>
-            <div className={styles.mobileNav}>
-                <div className={styles.mobileList}></div>
+            <IoMenuOutline className={styles.mobileBurger} onClick={openMobile}></IoMenuOutline>
+            <div ref={mobile} className={styles.mobileNav}></div>
+            <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose>
+            <div className={styles.mobileList}>
+                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/">Home</Link></div>
+                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/about">About</Link></div>
+                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/resume">Resume</Link></div>
+                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/projects">Projects</Link></div>
+                {/* {activeLink === 'home' ? <Link ref={mobilePushRef} className={styles.activeList} href="/">Home</Link> : <Link ref={mobilePushRef} className={styles.list} href="/">Home</Link>}
+                {activeLink === 'about' ? <Link ref={mobilePushRef} className={styles.activeList} href="/about">About</Link> : <Link ref={mobilePushRef} className={styles.list} href="/about">About</Link>}
+                {activeLink === 'resume' ? <Link ref={mobilePushRef} className={styles.activeList} href="/resume">Resume</Link> : <Link ref={mobilePushRef} className={styles.list} href="/resume">Resume</Link>}
+                {activeLink === 'projects' ? <Link ref={mobilePushRef} className={styles.activeList} href="/projects">Projects</Link> : <Link ref={mobilePushRef} className={styles.list} href="/projects">Projects</Link>} */}
             </div>
         </>
     );
