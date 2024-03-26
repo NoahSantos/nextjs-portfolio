@@ -1,7 +1,7 @@
 "use client"
 import React, { useRef, useState } from "react";
 import { gsap } from "gsap";
-import { IoMenuOutline, IoClose } from "react-icons/io5";
+import { HiMenuAlt2 } from "react-icons/hi";
 import styles from './nav.module.css';
 import Link from 'next/link'
 
@@ -12,6 +12,7 @@ export default function Nav({activeLink}) {
     let count = useRef(1);
     let mobile = useRef();
     let mobileList = useRef([]);
+    let cont = useRef();
     const pushRef = (el) => box.current.push(el)
     const mobilePushRef = (el) => mobileList.current.push(el)
 
@@ -57,6 +58,10 @@ export default function Nav({activeLink}) {
         console.log(mobileList.current)
         // closes nav
         if(count.current === 0){
+            gsap.to(cont.current, {
+                duration: 0.2,  
+                rotation: 0,
+            });
             await gsap.to(mobileList.current, {
                 duration: 0.15, 
                 x: -200,
@@ -64,17 +69,21 @@ export default function Nav({activeLink}) {
                 ease: "back.inOut"
             });
             gsap.to(mobile.current, {
-                duration: 0.2,  
+                duration: 0.1,  
                 width: 0,
                 height: 0,
             });
             count.current = 1;
         // open nav
         }else{
+            gsap.to(cont.current, {
+                duration: 0.2,  
+                rotation: -90,
+            });
             await gsap.to(mobile.current, {
                 duration: 0.2,  
-                width: '125vw',
-                height: '125vh',
+                width: '100vw',
+                height: '100vh',
             });
             gsap.to(mobileList.current, {
                 duration: 0.3, 
@@ -133,9 +142,11 @@ export default function Nav({activeLink}) {
                 ))}
             </div>
 
-            <IoMenuOutline className={styles.mobileBurger} onClick={openMobile}></IoMenuOutline>
+            <div ref={cont} className={styles.burgerCont}>
+                <HiMenuAlt2 className={styles.mobileBurger} onClick={openMobile} />
+            </div>
             <div ref={mobile} className={styles.mobileNav}></div>
-            <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose>
+            {/* <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose> */}
             <div className={styles.mobileList}>
                 <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/">Home</Link></div>
                 <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/about">About</Link></div>
