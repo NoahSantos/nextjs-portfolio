@@ -89,7 +89,7 @@
         position: absolute;
         z-index: 2;
         /* background-color: #181818; */
-        background-color: #731c1c;
+        background-color: #003789;
         transform: translateY(-3rem);
     }
 
@@ -118,22 +118,12 @@
         z-index: 3;
         display: block;
         position: absolute;
-        left: 1rem; top: 0.25rem;
+        left: 0.5rem; top: 0.25rem;
     }
 
     .mobileBurger{
         display: block;
         color: #fff;
         font-size: 2.5rem;
-    }
-
-    .mobileX{
-        display: block;
-        color: #fff;
-        font-size: 2.5rem;
-        position: absolute;
-        z-index: 3;
-        left: 1rem;
-        top: 0.25rem;
     }
 }
