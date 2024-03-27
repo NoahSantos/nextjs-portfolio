@@ -95,31 +95,31 @@ export default function Nav({activeLink}) {
         }
     }
     
-    const onEnter = async() => {
-        await gsap.to(box.current, {
-            duration: 0.4, 
-            x: -50, 
-            stagger: 0.025,
-            ease: "back.in"
-        });
-        gsap.to(bar.current, {
-            duration: 0.4, 
-            y: 90, 
-        });
-    };
+    // const onEnter = async() => {
+    //     await gsap.to(box.current, {
+    //         duration: 0.4, 
+    //         x: -50, 
+    //         stagger: 0.025,
+    //         ease: "back.in"
+    //     });
+    //     gsap.to(bar.current, {
+    //         duration: 0.4, 
+    //         y: 90, 
+    //     });
+    // };
 
-    const onLeave = async() => {
-        await gsap.to(bar.current, {
-            duration: 0.4, 
-            y: -500, 
-        });
-        await gsap.to(box.current, {
-            duration: 0.4, 
-            x: -200, 
-            stagger: 0.025,
-            ease: "back.in"
-        });
-    };
+    // const onLeave = async() => {
+    //     await gsap.to(bar.current, {
+    //         duration: 0.4, 
+    //         y: -500, 
+    //     });
+    //     await gsap.to(box.current, {
+    //         duration: 0.4, 
+    //         x: -200, 
+    //         stagger: 0.025,
+    //         ease: "back.in"
+    //     });
+    // };
     
     return (
         <>
