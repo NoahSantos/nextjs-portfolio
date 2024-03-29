@@ -150,10 +150,10 @@ export default function Nav() {
             <div ref={mobile} className={styles.mobileNav}></div>
             {/* <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose> */}
             <div className={styles.mobileList}>
-                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/">Home</Link></div>
-                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/about">About</Link></div>
-                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/resume">Resume</Link></div>
-                <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/projects">Projects</Link></div>
+                <div><Link ref={mobilePushRef} className={pathname === '/' ? styles.mobileActive : styles.mobileListLink} href="/">Home</Link></div>
+                <div><Link ref={mobilePushRef} className={pathname === '/about' ? styles.mobileActive : styles.mobileListLink} href="/about">About</Link></div>
+                <div><Link ref={mobilePushRef} className={pathname === '/resume' ? styles.mobileActive : styles.mobileListLink} href="/resume">Resume</Link></div>
+                <div><Link ref={mobilePushRef} className={pathname === '/project' ? styles.mobileActive : styles.mobileListLink} href="/projects">Projects</Link></div>
             </div>
         </>
     );
