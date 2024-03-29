@@ -1,11 +1,13 @@
 "use client"
-import React, { useRef, useState } from "react";
-import { gsap } from "gsap";
-import { HiMenuAlt2 } from "react-icons/hi";
-import styles from './nav.module.css';
+import React, { useRef } from "react";
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import styles from './nav.module.css';
+import { HiMenuAlt2 } from "react-icons/hi";
+import { gsap } from "gsap";
 
-export default function Nav({activeLink}) {
+export default function Nav() {
+    const pathname = usePathname()
     let bar = useRef();
     let links = useRef();
     let box = useRef([]);
@@ -129,10 +131,10 @@ export default function Nav({activeLink}) {
             <div ref={bar} className={styles.navbar}></div>
             <div ref={links} className={styles.linkCont}>
                 <ul className={styles.linkList}>
-                    {activeLink === 'home' ? <li><Link className={styles.activeList} href="/">Home</Link></li> : <li><Link className={styles.list} href="/">Home</Link></li>}
-                    {activeLink === 'about' ? <li><Link className={styles.activeList} href="/about">About</Link></li> : <li><Link className={styles.list} href="/about">About</Link></li>}
-                    {activeLink === 'resume' ? <li><Link className={styles.activeList} href="/resume">Resume</Link></li> : <li><Link className={styles.list} href="/resume">Resume</Link></li>}
-                    {activeLink === 'projects' ? <li><Link className={styles.activeList} href="/projects">Projects</Link></li> : <li><Link className={styles.list} href="/projects">Projects</Link></li>}
+                    <li><Link className={pathname === '/' ? styles.activeList : styles.list} href='/'>Home</Link></li>
+                    <li><Link className={pathname === '/about' ? styles.activeList : styles.list} href='/about'>About</Link></li>
+                    <li><Link className={pathname === '/resume' ? styles.activeList : styles.list} href='/resume'>Resume</Link></li>
+                    <li><Link className={pathname === '/project' ? styles.activeList : styles.list} href='/project'>Projects</Link></li>
                 </ul>
             </div>
             <div className={styles.app}>
@@ -152,10 +154,6 @@ export default function Nav({activeLink}) {
                 <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/about">About</Link></div>
                 <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/resume">Resume</Link></div>
                 <div><Link ref={mobilePushRef} className={styles.mobileListLink} href="/projects">Projects</Link></div>
-                {/* {activeLink === 'home' ? <Link ref={mobilePushRef} className={styles.activeList} href="/">Home</Link> : <Link ref={mobilePushRef} className={styles.list} href="/">Home</Link>}
-                {activeLink === 'about' ? <Link ref={mobilePushRef} className={styles.activeList} href="/about">About</Link> : <Link ref={mobilePushRef} className={styles.list} href="/about">About</Link>}
-                {activeLink === 'resume' ? <Link ref={mobilePushRef} className={styles.activeList} href="/resume">Resume</Link> : <Link ref={mobilePushRef} className={styles.list} href="/resume">Resume</Link>}
-                {activeLink === 'projects' ? <Link ref={mobilePushRef} className={styles.activeList} href="/projects">Projects</Link> : <Link ref={mobilePushRef} className={styles.list} href="/projects">Projects</Link>} */}
             </div>
         </>
     );

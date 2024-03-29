@@ -5,7 +5,7 @@ import Contact from '../components/Contact';
 export default function Page() {
   return (
     <>
-      <Nav activeLink='home' />
+      <Nav/>
       <Contact/>
     </>
   )
