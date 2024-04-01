@@ -1,5 +1,5 @@
 "use client"
-import styles from './contact.module.css';
+import styles from '../app/Styles/css/contact.module.css';
 import { BsLinkedin, BsGithub, BsInstagram, BsDiscord, BsFillTelephoneFill } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import { useRef } from 'react';

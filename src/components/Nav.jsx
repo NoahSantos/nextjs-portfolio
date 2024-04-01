@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import styles from './nav.module.css';
+import styles from '../app/styles/css/nav.module.css';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { gsap } from "gsap";
 
