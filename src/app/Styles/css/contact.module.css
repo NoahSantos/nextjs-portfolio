@@ -12,6 +12,7 @@
 }
 
 .iconCont{
+    /* height: 60%; */
     height: 40%;
     width: 100%;
     display: flex;
@@ -74,6 +75,7 @@
     }
 
     .contactIcon {
+        /* font-size: clamp(1.5rem, 1.137rem + 2.903vw, 3.75rem); */
         font-size: clamp(1.5rem, 1.137rem + 2.903vw, 3rem);
         pointer-events: auto;
     }
