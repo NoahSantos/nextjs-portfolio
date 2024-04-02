@@ -4,7 +4,7 @@ import styles from './Styles/css/home.module.css';
 
 export default function Page() {
   return (
-    <div>
+    <div className={styles.container}>
       
     </div>
   )
