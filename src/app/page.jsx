@@ -19,8 +19,12 @@ export default function Page() {
         <div className={styles.name}>
           <div className={styles.lineCont}>
             <div ref={line} className={styles.line}></div>
-            <div className={`${styles.box} ${styles.coverBoxF}`}></div>
-            <div className={`${styles.box} ${styles.coverBoxL}`}></div>
+            <div className={`${styles.box} ${styles.coverBoxF}`}>
+              <p className={`${styles.name} ${styles.fName}`}>Noah</p>
+            </div>
+            <div className={`${styles.box} ${styles.coverBoxL}`}>
+              <p className={`${styles.name} ${styles.LName}`}>Santos</p>
+            </div>
           </div>
         </div>
 

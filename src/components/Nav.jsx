@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import styles from '../app/styles/css/nav.module.css';
+import styles from '../app/styles/scss/nav.module.scss';
 import { HiMenuAlt2 } from "react-icons/hi";
 import { gsap } from "gsap";
 
@@ -128,7 +128,9 @@ export default function Nav() {
             <div className={styles.topBar}>
 
             </div>
+
             <div ref={bar} className={styles.navbar}></div>
+
             <div ref={links} className={styles.linkCont}>
                 <ul className={styles.linkList}>
                     <li><Link className={pathname === '/' ? styles.activeList : styles.list} href='/'>Home</Link></li>
