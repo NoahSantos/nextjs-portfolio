@@ -15,7 +15,7 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        // justify-content: space-evenly;
         align-items: center;
         
         .name{
@@ -88,8 +88,11 @@
         .brief {
             width: 80%;
             height: 50%;
+            display: flex;
+            justify-content: center;
 
             .briefInfo{
+                width: 90%;
                 color: #fff;
                 padding-top: 1rem;
                 font-size: 1.5rem;
@@ -119,7 +122,7 @@
         .infoCont{
             .brief{
                 .briefInfo{
-                    font-size: 1rem;
+                    font-size: 1.15rem;
                 }
             }
         }
@@ -137,7 +140,7 @@
             
             .name{
                 height: auto;
-                // padding-top: clamp(2rem, 1.667rem + 2.133vw, 3rem);
+                padding-top: clamp(2rem, 1.667rem + 2.133vw, 3rem);
 
                 .lineCont{
                     height: clamp(10rem, 9.143rem + 4.571vw, 12rem);
@@ -163,6 +166,10 @@
 
             .brief {
                 height: auto;
+
+                .briefInfo{
+                    padding-top: 2rem;
+                }
             }
         }
         
@@ -187,6 +194,12 @@
                             font-size: clamp(1.75rem, 0.763rem + 6.316vw, 2.5rem);
                         }
                     }
+                }
+            }
+
+            .brief {
+                .briefInfo {
+                    font-size: 0.95rem;
                 }
             }
         }
