@@ -23,6 +23,7 @@
     justify-content: center;
     flex-direction: column;
     pointer-events: none;
+    position: absolute;
 
     .box {
         z-index: 2;
@@ -78,6 +79,10 @@
 @media (max-height: 525px), (max-width: 660px) {
     .navbar, .linkCont, .app {
         display: none;
+    }
+
+    .topBar{
+        top: 0;
     }
     
     .mobileNav{

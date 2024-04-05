@@ -9,9 +9,15 @@ export default function Page() {
   let lastN = useRef();
   let firstNCont = useRef();
   let lastNCont = useRef();
+  let info = useRef();
 
   useEffect(() => {
     (async()=>{
+      gsap.to(info.current, {
+        duration: 0.8, 
+        opacity: 1,
+        y: 0,
+      })
       await gsap.to(line.current, {
         duration: 0.4, 
         height: '100%', 
@@ -42,7 +48,9 @@ export default function Page() {
           </div>
         </div>
 
-        <div className={styles.brief}></div>
+        <div className={styles.brief}>
+          <h1 ref={info} className={styles.briefInfo}>My name is Noah Santos, and I am a front-end developer with knowledge in multiple languages.</h1>
+        </div>
       </div>
 
       <div className={styles.imageCont}>
