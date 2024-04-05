@@ -21,7 +21,8 @@
             
             .lineCont{
                 z-index: 3;
-                height: 12rem;
+                // height: 12rem;
+                height: clamp(4rem, -1.714rem + 15.238vw, 12rem);
                 width: 0.25rem;
                 display: flex;
                 flex-direction: column;
@@ -38,7 +39,8 @@
 
                 .box {
                     // z-index: 2;
-                    height: 6rem;
+                    // height: 6rem;
+                    height: clamp(2rem, -0.857rem + 7.619vw, 6rem);
                     width: clamp(7rem, -2.286rem + 24.762vw, 20rem);
                     background-color: #181818;
                     // background-color: #c2c0c0;
@@ -48,6 +50,7 @@
                         height: 100%;
                         z-index: -1;
                         font-size: clamp(2rem, -0.143rem + 5.714vw, 5rem);
+                        color: white;
                     }
                 }
 
@@ -94,9 +97,39 @@
     }
 }
 
-@media (max-width: 800px){
+@media (max-width: 1000px){
     .container{
         flex-direction: column;
+        width: 100%;
+        left: 0;
+
+        .infoCont{
+            .name{
+                height: auto;
+                margin-top: clamp(2rem, 1.667rem + 2.133vw, 3rem);
+
+                .lineCont{
+                    height: clamp(10rem, 9.143rem + 4.571vw, 12rem);
+        
+                    .box{
+                        height: clamp(5rem, 4.571rem + 2.286vw, 6rem);
+        
+                        .nameText{
+                            font-size: clamp(3rem, 2.143rem + 4.571vw, 5rem);
+                            width: 100%;
+                        }
+                    }
+
+                    .coverBoxF{
+                        width: 35vw;
+                    }
+
+                    .coverBoxL{
+                        width: 40vw;
+                    }
+                }
+            }
+        }
         
         .imageCont{
             display: none;
@@ -104,12 +137,33 @@
     }
 }
 
-@media (max-height: 550px){
-    .lineCont {
-        height: 6rem;
-        
-        .box {
-            height: 3rem;
+@media (max-width: 440px){
+    .container {
+        .infoCont {
+            .name {
+                .lineCont {
+                    height: 6rem;
+
+                    .box {
+                        height: clamp(5rem, 4.571rem + 2.286vw, 6rem);
+                        height: 3rem;
+
+                        .nameText {
+                            font-size: clamp(1.75rem, 0.763rem + 6.316vw, 2.5rem);
+                        }
+                    }
+                }
+            }
         }
     }
 }
+
+// @media (max-height: 550px){
+//     .lineCont {
+//         height: 6rem;
+        
+//         .box {
+//             height: 3rem;
+//         }
+//     }
+// }
