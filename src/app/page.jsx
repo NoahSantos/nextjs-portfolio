@@ -10,6 +10,7 @@ export default function Page() {
   let firstNCont = useRef();
   let lastNCont = useRef();
   let info = useRef();
+  let img = useRef();
 
   useEffect(() => {
     (async()=>{
@@ -17,6 +18,10 @@ export default function Page() {
         duration: 0.8, 
         opacity: 1,
         y: 0,
+      })
+      gsap.to(img.current, {
+        duration: 0.8, 
+        opacity: 1,
       })
       await gsap.to(line.current, {
         duration: 0.4, 
@@ -53,8 +58,8 @@ export default function Page() {
         </div>
       </div>
 
-      <div className={styles.imageCont}>
-
+      <div className={styles.imageSect}>
+        <div ref={img} className={styles.imageCont}></div>
       </div>
     </div>
   )

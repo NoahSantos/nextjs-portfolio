@@ -9,13 +9,14 @@
     left: 50px;
     padding-right: 55px;
     padding-left: 50px;
+    overflow-y: hidden;
     
     .infoCont{
         height: auto;
         width: 100%;
         display: flex;
         flex-direction: column;
-        // justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
         
         .name{
@@ -23,7 +24,7 @@
             justify-content: center;
             align-items: flex-end;
             width: 100%;
-            height: 50%;
+            height: auto;
             
             .lineCont{
                 z-index: 3;
@@ -87,14 +88,14 @@
 
         .brief {
             width: 80%;
-            height: 50%;
+            height: auto;
             display: flex;
             justify-content: center;
 
             .briefInfo{
-                width: 90%;
+                width: 100%;
                 color: #fff;
-                padding-top: 1rem;
+                padding: 5rem 0rem 0rem 1rem;
                 font-size: 1.5rem;
                 transform: translateY(100%);
                 opacity: 0;
@@ -102,9 +103,20 @@
         }
     }
 
-    .imageCont {
+    .imageSect {
         height: 100%;
         width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .imageCont{
+            width: clamp(8rem, 5.479rem + 16.134vw, 20rem);
+            height: clamp(8rem, 5.479rem + 16.134vw, 20rem);
+            background-color: antiquewhite;
+            border-radius: 2rem;
+            opacity: 0;
+        }
     }
 }
 
@@ -168,12 +180,12 @@
                 height: auto;
 
                 .briefInfo{
-                    padding-top: 2rem;
+                    padding-top: 1.75rem;
                 }
             }
         }
         
-        .imageCont{
+        .imageSect{
             display: none;
         }
     }
@@ -206,12 +218,29 @@
     }
 }
 
-// @media (max-height: 550px){
-//     .lineCont {
-//         height: 6rem;
-        
-//         .box {
-//             height: 3rem;
-//         }
-//     }
-// }
+@media (max-height: 400px){
+    .container {
+        .infoCont{
+            .brief{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-height: 450px) {
+    .container {
+        .infoCont {
+            .brief {
+                display: none;
+            }
+        }
+
+        .imageSect {
+            .imageCont{
+                width: 10rem;
+                height: 10rem;
+            }
+        }
+    }
+}
