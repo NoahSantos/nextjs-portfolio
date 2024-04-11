@@ -1,0 +1,20 @@
+.resumeCont{
+    z-index: 1;
+    height: calc(100vh - 3rem);
+    width: calc(100vw - 105px);
+    display: flex;
+    flex-direction: row;
+    background-color: #181818;
+    position: relative;
+    left: 50px;
+    padding-right: 55px;
+    padding-left: 50px;
+    overflow: hidden;
+
+
+    .temp{
+        background-color: aqua;
+        width: 10rem;
+        height: 10rem;
+    }
+}
