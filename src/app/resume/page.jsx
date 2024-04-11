@@ -5,6 +5,17 @@ import { useEffect, useState, useRef } from 'react';
 export default function Resume() {
     const [rotation, setRotation] = useState(0);
     let temp = useRef();
+    let skill = useRef();
+    let education = useRef();
+    let certification = useRef();
+    let experience = useRef();
+
+    useEffect(()=>{
+        skill.current.style.top = ``
+        education.current.style.right = ``
+        certification.current.style.bottom = ``
+        experience.current.style.left = ``
+    }, [])
 
     const handleWheel = (event) => {
         const newRotation = rotation + event.deltaY * 0.1;
@@ -13,13 +24,18 @@ export default function Resume() {
 
     useEffect(() => {
         temp.current.style.transform = `rotate(${rotation}deg)`;
-    }, [rotation])
+    }, [rotation]);
     
 
     return (
         <>
             <div className={styles.resumeCont} onWheel={handleWheel}>
-                <div ref={temp} className={styles.temp} style={{ transform: `rotate(${rotation}deg)` }}></div>
+                <div ref={temp} className={styles.temp}>
+                    <div ref={skill} className={styles.skills}></div>
+                    <div ref={education} className={styles.education}></div>
+                    <div ref={certification} className={styles.certifications}></div>
+                    <div ref={experience} className={styles.experience}></div>
+                </div>
             </div>
         </>
     )
