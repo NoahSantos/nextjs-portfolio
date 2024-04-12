@@ -15,17 +15,18 @@
         background-color: aqua;
         aspect-ratio: 1/1;
         // height: calc(200vh);
-        width: 200vw;
+        // width: 200vw;
+        height: 50vh;
         position: absolute;
         left: 0;
-        // top: 50%;
+        top: 50%;
         // transform: translate(-50%, -50%);
 
         .skills{
-            height: calc(100vh - 3rem);
-            width: calc(100vw - 105px);
-            // height: calc(25vh - 0.75rem);
-            // width: calc(25vw - 26.25px);
+            // height: calc(100vh - 3rem);
+            // width: calc(100vw - 105px);
+            height: calc(10vh - 0.3rem);
+            width: calc(10vw - 10.5px);
             background-color: yellow;
             position: absolute;
             right: 0;
@@ -34,40 +35,51 @@
         }
 
         .education{
-            height: calc(100vh - 3rem);
-            width: calc(100vw - 105px);
-            // height: calc(25vh - 0.75rem);
-            // width: calc(25vw - 26.25px);
+            // height: calc(100vh - 3rem);
+            // width: calc(100vw - 105px);
+            width: calc(10vh - 0.3rem);
+            height: calc(10vw - 10.5px);
             background-color: purple;
             position: absolute;
             left: 50%;
             top: 0;
             transform: translateX(-50%) rotate(270deg);
+            transform: translateX(-50%);
             // transform: translate(-50%, -50%) rotate(270deg);
         }
         
         .certifications{
-            height: calc(100vh - 3rem);
-            width: calc(100vw - 105px);
-            // height: calc(25vh - 0.75rem);
-            // width: calc(25vw - 26.25px);
+            // height: calc(100vh - 3rem);
+            // width: calc(100vw - 105px);
+            height: calc(10vh - 0.3rem);
+            width: calc(10vw - 10.5px);
             background-color: green;
             position: absolute;
             left: 0;
             top: 50%;
             transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%);
         }
 
         .experience{
-            height: calc(100vh - 3rem);
-            width: calc(100vw - 105px);
-            // height: calc(25vh - 0.75rem);
-            // width: calc(25vw - 26.25px);
+            // height: calc(100vh - 3rem);
+            // width: calc(100vw - 105px);
+            width: calc(10vh - 0.3rem);
+            height: calc(10vw - 10.5px);
             background-color: grey;
             position: absolute;
             left: 50%;
             bottom: 0;
-            transform: translateX(-50%) rotate(90deg);
+            // transform: translateX(-50%) rotate(90deg);
+            transform: translateX(-50%);
         }
+    }
+}
+
+
+@media (max-height: 525px),
+(max-width: 660px) {
+    .resumeCont{
+        left: 0;
     }
 }

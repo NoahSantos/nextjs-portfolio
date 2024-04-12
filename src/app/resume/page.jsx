@@ -16,7 +16,7 @@ export default function Resume() {
     };
 
     useEffect(() => {
-        temp.current.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        temp.current.style.transform = `translate(-60%, -50%) rotate(${rotation}deg)`;
     }, [rotation]);
     
 
