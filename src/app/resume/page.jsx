@@ -10,20 +10,13 @@ export default function Resume() {
     let certification = useRef();
     let experience = useRef();
 
-    useEffect(()=>{
-        skill.current.style.top = ``
-        education.current.style.right = ``
-        certification.current.style.bottom = ``
-        experience.current.style.left = ``
-    }, [])
-
     const handleWheel = (event) => {
-        const newRotation = rotation + event.deltaY * 0.1;
+        const newRotation = rotation + event.deltaY * 0.03;
         setRotation(newRotation);
     };
 
     useEffect(() => {
-        temp.current.style.transform = `rotate(${rotation}deg)`;
+        temp.current.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
     }, [rotation]);
     
 
