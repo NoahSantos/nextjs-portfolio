@@ -26,7 +26,7 @@ export default function Resume() {
             const deltaY = event.touches[0].clientY - parseFloat(temp.current.dataset.touchStartY);
 
             // Adjust rotation based on touch movement
-            const newRotation = rotation + deltaY * 0.03;
+            const newRotation = rotation + deltaY * 0.2;
             setRotation(newRotation);
 
             // Update touch start position
