@@ -22,57 +22,102 @@
         top: 50%;
         // transform: translate(-50%, -50%);
 
-        .skills{
-            // height: calc(100vh - 3rem);
-            // width: calc(100vw - 105px);
-            height: calc(10vh - 0.3rem);
-            width: calc(10vw - 10.5px);
-            background-color: yellow;
-            position: absolute;
-            right: 0;
-            top: 50%;
-            transform: translateY(-50%);
+        .square{
+            height: 50%;
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .education{
-            // height: calc(100vh - 3rem);
-            // width: calc(100vw - 105px);
-            width: calc(10vh - 0.3rem);
-            height: calc(10vw - 10.5px);
-            background-color: purple;
-            position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translateX(-50%) rotate(270deg);
-            transform: translateX(-50%);
-            // transform: translate(-50%, -50%) rotate(270deg);
-        }
-        
-        .certifications{
-            // height: calc(100vh - 3rem);
-            // width: calc(100vw - 105px);
-            height: calc(10vh - 0.3rem);
-            width: calc(10vw - 10.5px);
+        .skills{
             background-color: green;
             position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%) rotate(180deg);
-            transform: translateY(-50%);
+            top: 0; left: 0;
+            .skillsName{
+                transform: rotate(135deg);
+                font-size: 1.5rem;
+            }
+        }
+        .education{
+            background-color: red;
+            position: absolute;
+            top: 0; right: 0;
+            .educationName{
+                transform: rotate(-135deg);
+                font-size: 1.5rem;
+            }
+        }
+        .certifications{
+            background-color: blue;
+            position: absolute;
+            bottom: 0; left: 0;
+            .certificationsName{
+                transform: rotate(45deg);
+                font-size: 1.5rem;
+            }
+        }
+        .experience{
+            background-color: purple;
+            position: absolute;
+            bottom: 0; right: 0;
+            .experienceName{
+                transform: rotate(-45deg);
+                font-size: 1.5rem;
+            }
         }
 
-        .experience{
-            // height: calc(100vh - 3rem);
-            // width: calc(100vw - 105px);
-            width: calc(10vh - 0.3rem);
-            height: calc(10vw - 10.5px);
-            background-color: grey;
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            // transform: translateX(-50%) rotate(90deg);
-            transform: translateX(-50%);
-        }
+        // .skills{
+        //     // height: calc(100vh - 3rem);
+        //     // width: calc(100vw - 105px);
+        //     height: calc(10vh - 0.3rem);
+        //     width: calc(10vw - 10.5px);
+        //     background-color: yellow;
+        //     position: absolute;
+        //     right: 0;
+        //     top: 50%;
+        //     transform: translateY(-50%);
+        // }
+
+        // .education{
+        //     // height: calc(100vh - 3rem);
+        //     // width: calc(100vw - 105px);
+        //     width: calc(10vh - 0.3rem);
+        //     height: calc(10vw - 10.5px);
+        //     background-color: purple;
+        //     position: absolute;
+        //     left: 50%;
+        //     top: 0;
+        //     transform: translateX(-50%) rotate(270deg);
+        //     transform: translateX(-50%);
+        //     // transform: translate(-50%, -50%) rotate(270deg);
+        // }
+        
+        // .certifications{
+        //     // height: calc(100vh - 3rem);
+        //     // width: calc(100vw - 105px);
+        //     height: calc(10vh - 0.3rem);
+        //     width: calc(10vw - 10.5px);
+        //     background-color: green;
+        //     position: absolute;
+        //     left: 0;
+        //     top: 50%;
+        //     transform: translateY(-50%) rotate(180deg);
+        //     transform: translateY(-50%);
+        // }
+
+        // .experience{
+        //     // height: calc(100vh - 3rem);
+        //     // width: calc(100vw - 105px);
+        //     width: calc(10vh - 0.3rem);
+        //     height: calc(10vw - 10.5px);
+        //     background-color: grey;
+        //     position: absolute;
+        //     left: 50%;
+        //     bottom: 0;
+        //     // transform: translateX(-50%) rotate(90deg);
+        //     transform: translateX(-50%);
+        // }
     }
 }
 
@@ -81,5 +126,13 @@
 (max-width: 660px) {
     .resumeCont{
         left: 0;
+    }
+}
+
+@media (max-width: 639px),
+(max-height: 450px) {
+    .resumeCont{
+        padding: 0;
+        width: 100%;
     }
 }

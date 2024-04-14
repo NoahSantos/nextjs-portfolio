@@ -24,10 +24,10 @@ export default function Resume() {
         <>
             <div className={styles.resumeCont} onWheel={handleWheel}>
                 <div ref={temp} className={styles.temp}>
-                    <div ref={skill} className={styles.skills}></div>
-                    <div ref={education} className={styles.education}></div>
-                    <div ref={certification} className={styles.certifications}></div>
-                    <div ref={experience} className={styles.experience}></div>
+                    <div ref={skill} className={`${styles.skills} ${styles.square}`}><p className={styles.skillsName}>skills</p></div>
+                    <div ref={education} className={`${styles.education} ${styles.square}`}><p className={styles.educationName}>education</p></div>
+                    <div ref={certification} className={`${styles.certifications} ${styles.square}`}><p className={styles.certificationsName}>certifications</p></div>
+                    <div ref={experience} className={`${styles.experience} ${styles.square}`}><p className={styles.experienceName}>experience</p></div>
                 </div>
             </div>
         </>
