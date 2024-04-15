@@ -40,20 +40,41 @@ export default function Resume() {
     };
 
     useEffect(() => {
-        temp.current.style.transform = `translate(-60%, -50%) rotate(${rotation}deg)`;
+        if(window.innerWidth > 300){
+            temp.current.style.transform = `translate(-60%, -50%) rotate(${rotation}deg)`;
+        }else{
+            temp.current.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+        }
     }, [rotation]);
+
+    const showInfo = (section) =>{
+        console.log('clicked')
+    }
     
 
     return (
         <>
             <div className={styles.resumeCont} onWheel={handleWheel} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
                 <div ref={temp} className={styles.temp}>
-                    <div ref={skill} className={`${styles.skills} ${styles.square}`}><p className={styles.skillsName}>skills</p></div>
-                    <div ref={education} className={`${styles.education} ${styles.square}`}><p className={styles.educationName}>education</p></div>
-                    <div ref={certification} className={`${styles.certifications} ${styles.square}`}><p className={styles.certificationsName}>certifications</p></div>
-                    <div ref={experience} className={`${styles.experience} ${styles.square}`}><p className={styles.experienceName}>experience</p></div>
+                    <div className={`${styles.skills} ${styles.square}`}><p className={styles.skillsName} onClick={()=>showInfo(skill)}>skills</p></div>
+                    <div className={`${styles.education} ${styles.square}`}><p className={styles.educationName} onClick={()=>showInfo(education)}>education</p></div>
+                    <div className={`${styles.certifications} ${styles.square}`}><p className={styles.certificationsName} onClick={()=>showInfo(certification)}>certifications</p></div>
+                    <div className={`${styles.experience} ${styles.square}`}><p className={styles.experienceName} onClick={()=>showInfo(experience)}>experience</p></div>
                 </div>
             </div>
+
+            {/* <div ref={skill} className={`${styles.skillsCont}`}>
+                <p className={styles.skillsName} onClick={showInfo('skill')}>skills</p>
+            </div>
+            <div ref={education} className={`${styles.educationCont}`}>
+                <p className={styles.educationName} onClick={showInfo('education')}>education</p>
+            </div>
+            <div ref={certification} className={`${styles.certificationsCont}`}>
+                <p className={styles.certificationsName} onClick={showInfo('certification')}>certifications</p>
+            </div>
+            <div ref={experience} className={`${styles.experienceCont}`}>
+                <p className={styles.experienceName} onClick={showInfo('experience')}>experience</p>
+            </div> */}
         </>
     )
 };

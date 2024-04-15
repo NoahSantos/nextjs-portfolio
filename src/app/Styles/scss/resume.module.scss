@@ -17,6 +17,7 @@
         // height: calc(200vh);
         // width: 200vw;
         height: 50vh;
+        // width: 20vw;
         position: absolute;
         left: 0;
         top: 50%;
@@ -36,7 +37,13 @@
             top: 0; left: 0;
             .skillsName{
                 transform: rotate(135deg);
-                font-size: 1.5rem;
+                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                transition: all .5s;
+            }
+        }
+        .skills:hover{
+            .skillsName{
+                font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
             }
         }
         .education{
@@ -45,7 +52,13 @@
             top: 0; right: 0;
             .educationName{
                 transform: rotate(-135deg);
-                font-size: 1.5rem;
+                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                transition: all .5s;
+            }
+        }
+        .education:hover {
+            .educationName {
+                font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
             }
         }
         .certifications{
@@ -54,7 +67,13 @@
             bottom: 0; left: 0;
             .certificationsName{
                 transform: rotate(45deg);
-                font-size: 1.5rem;
+                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                transition: all .5s;
+            }
+        }
+        .certifications:hover {
+            .certificationsName {
+                font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
             }
         }
         .experience{
@@ -63,7 +82,13 @@
             bottom: 0; right: 0;
             .experienceName{
                 transform: rotate(-45deg);
-                font-size: 1.5rem;
+                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                transition: all .5s;
+            }
+        }
+        .experience:hover {
+            .experienceName {
+                font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
             }
         }
 
@@ -121,6 +146,10 @@
     }
 }
 
+.skillCont{
+
+}
+
 
 @media (max-height: 525px),
 (max-width: 660px) {
@@ -134,5 +163,14 @@
     .resumeCont{
         padding: 0;
         width: 100%;
+    }
+}
+
+@media (max-width: 300px) {
+    .resumeCont {
+        .temp{
+            top: 0;
+            left: 50%;
+        }
     }
 }
