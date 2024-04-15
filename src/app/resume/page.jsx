@@ -1,6 +1,8 @@
 'use client';
 import styles from '../Styles/scss/resume.module.scss';
 import { useEffect, useState, useRef } from 'react';
+import { gsap } from "gsap";
+import { IoClose } from "react-icons/io5";
 
 export default function Resume() {
     const [rotation, setRotation] = useState(0);
@@ -49,8 +51,23 @@ export default function Resume() {
 
     const showInfo = (section) =>{
         console.log('clicked')
+        console.log(section.current)
+        gsap.to(section.current, {
+            duration: 0.3, 
+            y: 0, 
+            opacity: 1,
+        });
     }
     
+    const closeInfo = (section) =>{
+        console.log('clicked')
+        console.log(section.current)
+        gsap.to(section.current, {
+            duration: 0.3, 
+            y: 100, 
+            opacity: 0,
+        });
+    }
 
     return (
         <>
@@ -63,18 +80,20 @@ export default function Resume() {
                 </div>
             </div>
 
-            {/* <div ref={skill} className={`${styles.skillsCont}`}>
-                <p className={styles.skillsName} onClick={showInfo('skill')}>skills</p>
+            <div className={styles.cont}>
+                <div ref={skill} className={`${styles.skillsCont} ${styles.sect}`}>
+                    <IoClose className={styles.close} onClick={()=>closeInfo(skill)}></IoClose>
+                </div>
+                <div ref={education} className={`${styles.educationCont} ${styles.sect}`}>
+                    <IoClose className={styles.close} onClick={()=>closeInfo(education)}></IoClose>
+                </div>
+                <div ref={certification} className={`${styles.certificationsCont} ${styles.sect}`}>
+                    <IoClose className={styles.close} onClick={()=>closeInfo(certification)}></IoClose>
+                </div>
+                <div ref={experience} className={`${styles.experienceCont} ${styles.sect}`}>
+                    <IoClose className={styles.close} onClick={()=>closeInfo(experience)}></IoClose>
+                </div>
             </div>
-            <div ref={education} className={`${styles.educationCont}`}>
-                <p className={styles.educationName} onClick={showInfo('education')}>education</p>
-            </div>
-            <div ref={certification} className={`${styles.certificationsCont}`}>
-                <p className={styles.certificationsName} onClick={showInfo('certification')}>certifications</p>
-            </div>
-            <div ref={experience} className={`${styles.experienceCont}`}>
-                <p className={styles.experienceName} onClick={showInfo('experience')}>experience</p>
-            </div> */}
         </>
     )
 };

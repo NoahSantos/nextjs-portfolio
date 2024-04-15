@@ -146,8 +146,46 @@
     }
 }
 
-.skillCont{
+.cont{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    .sect{
+        width: 70vw;
+        height: 70vh;
+        background-color: beige;
+        pointer-events: auto;
+        position: absolute;
+        opacity: 0;
+        transform: translateY(100px);
+        border-radius: 1rem;
+
+        .close{
+            color: black;
+            font-size: 3rem;
+            padding: 0.5rem 0rem 0rem 0.5rem;
+        }
+    }
+
+    .skillsCont{
+        
+    }
+    .educationCont{
+
+    }
+    .certificationsCont{
+
+    }
+    .experienceCont{
+
+    }
 }
 
 
