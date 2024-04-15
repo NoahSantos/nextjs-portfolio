@@ -228,6 +228,7 @@
             .content {
                 color: black;
                 font-size: min(clamp(0.5rem, 0.033rem + 3.738vh, 2rem), clamp(0.5rem, 0.258rem + 1.935vw, 2rem));
+                padding-left: 0.5rem;
             }
         }
     }

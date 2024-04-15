@@ -39,7 +39,7 @@ export default function Nav() {
         // open nav
         }else{
             await gsap.to(box.current, {
-                duration: 0.3, 
+                duration: 0.2, 
                 x: -50, 
                 stagger: 0.015,
                 ease: "back.in"
