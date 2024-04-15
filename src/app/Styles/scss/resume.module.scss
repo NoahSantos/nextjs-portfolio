@@ -31,20 +31,28 @@
         .skills{
             position: absolute;
             top: 0; left: 0;
+            transition: all .5s;
+
             .skillsName{
                 transform: rotate(135deg);
                 font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
                 transition: all .5s;
             }
         }
+
         .skills:hover{
+            background-color: #2b2b2b;
+
             .skillsName{
                 font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
+                font-weight: bold;
             }
         }
         .education{
             position: absolute;
             top: 0; right: 0;
+            transition: all .5s;
+
             .educationName{
                 transform: rotate(-135deg);
                 font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
@@ -52,13 +60,18 @@
             }
         }
         .education:hover {
+            background-color: #2b2b2b;
+
             .educationName {
                 font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
+                font-weight: bold;
             }
         }
         .certifications{
             position: absolute;
             bottom: 0; left: 0;
+            transition: all .5s;
+
             .certificationsName{
                 transform: rotate(45deg);
                 font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
@@ -66,13 +79,18 @@
             }
         }
         .certifications:hover {
+            background-color: #2b2b2b;
+
             .certificationsName {
                 font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
+                font-weight: bold;
             }
         }
         .experience{
             position: absolute;
             bottom: 0; right: 0;
+            transition: all .5s;
+
             .experienceName{
                 transform: rotate(-45deg);
                 font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
@@ -80,8 +98,11 @@
             }
         }
         .experience:hover {
+            background-color: #2b2b2b;
+
             .experienceName {
                 font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
+                font-weight: bold;
             }
         }
     }
@@ -207,7 +228,7 @@
 
         .content{
             color: black;
-            font-size: min(clamp(0.5rem, 0.34rem + 1.282vh, 1rem), clamp(0.5rem, 0.44rem + 0.476vw, 1rem));
+            font-size: min(clamp(0.5rem, 0.26rem + 1.923vh, 1.25rem), clamp(0.5rem, 0.411rem + 0.714vw, 1.25rem)   );
         }
     }
 }
