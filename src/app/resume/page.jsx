@@ -5,7 +5,7 @@ import { gsap } from "gsap";
 import { IoClose } from "react-icons/io5";
 
 export default function Resume() {
-    const [rotation, setRotation] = useState(0);
+    const [rotation, setRotation] = useState(45);
     let temp = useRef();
     let skill = useRef();
     let education = useRef();
@@ -13,7 +13,7 @@ export default function Resume() {
     let experience = useRef();
 
     const handleWheel = (event) => {
-        const newRotation = rotation + event.deltaY * 0.03;
+        const newRotation = rotation + event.deltaY * 0.06;
         setRotation(newRotation);
     };
 

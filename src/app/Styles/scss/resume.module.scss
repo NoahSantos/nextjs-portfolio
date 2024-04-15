@@ -15,7 +15,7 @@
         aspect-ratio: 1/1;
         height: 50vh;
         position: absolute;
-        left: 0;
+        left: 2.6%;
         top: 50%;
 
         .square{
@@ -37,6 +37,7 @@
                 transform: rotate(135deg);
                 font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
                 transition: all .5s;
+                color: white;
             }
         }
 
@@ -55,8 +56,9 @@
 
             .educationName{
                 transform: rotate(-135deg);
-                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                font-size: clamp(0.65rem, 0.307rem + 2.741vh, 1.75rem);
                 transition: all .5s;
+                color: white;
             }
         }
         .education:hover {
@@ -74,8 +76,9 @@
 
             .certificationsName{
                 transform: rotate(45deg);
-                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                font-size: clamp(0.55rem, 0.176rem + 2.991vh, 1.75rem);
                 transition: all .5s;
+                color: white;
             }
         }
         .certifications:hover {
@@ -93,8 +96,9 @@
 
             .experienceName{
                 transform: rotate(-45deg);
-                font-size: clamp(0.75rem, 0.429rem + 2.564vh, 1.75rem);
+                font-size: clamp(0.65rem, 0.307rem + 2.741vh, 1.75rem);
                 transition: all .5s;
+                color: white;
             }
         }
         .experience:hover {
@@ -208,6 +212,11 @@
     .skillsCont{
         display: flex;
         flex-direction: row;
+
+        .soft, .hard{
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     .educationCont, .certificationsCont, .experienceCont{
