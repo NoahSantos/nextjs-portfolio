@@ -79,17 +79,42 @@ export default function Resume() {
         <>
             <div className={styles.resumeCont} onWheel={handleWheel} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
                 <div ref={temp} className={styles.temp}>
-                    <div className={`${styles.skills} ${styles.square}`}><p className={styles.skillsName} onClick={()=>showInfo(skill)}>skills</p></div>
-                    <div className={`${styles.education} ${styles.square}`}><p className={styles.educationName} onClick={()=>showInfo(education)}>education</p></div>
-                    <div className={`${styles.certifications} ${styles.square}`}><p className={styles.certificationsName} onClick={()=>showInfo(certification)}>certifications</p></div>
-                    <div className={`${styles.experience} ${styles.square}`}><p className={styles.experienceName} onClick={()=>showInfo(experience)}>experience</p></div>
+                    <div className={`${styles.skills} ${styles.square}`} onClick={()=>showInfo(skill)}>
+                        <p className={styles.skillsName}>skills</p>
+                    </div>
+                    <div className={`${styles.education} ${styles.square}`} onClick={()=>showInfo(education)}>
+                        <p className={styles.educationName}>education</p>
+                    </div>
+                    <div className={`${styles.certifications} ${styles.square}`} onClick={()=>showInfo(certification)}>
+                        <p className={styles.certificationsName}>certifications</p>
+                    </div>
+                    <div className={`${styles.experience} ${styles.square}`} onClick={()=>showInfo(experience)}>
+                        <p className={styles.experienceName}>experience</p>
+                    </div>
                 </div>
             </div>
 
             <div className={styles.cont}>
                 <div ref={skill} className={`${styles.skillsCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(skill)}></IoClose>
-
+                    <div className={styles.soft}>
+                        <p className={styles.title}>Soft Skills</p>
+                        <p className={styles.content}>Teamwork/Collaboration</p>
+                        <p className={styles.content}>Communication</p>
+                        <p className={styles.content}>Problem solving</p>
+                        <p className={styles.content}>Creativity</p>
+                        <p className={styles.content}>Leadership</p>
+                        <p className={styles.content}>Time management</p>
+                    </div>
+                    <div className={styles.hard}>
+                        <p className={styles.title}>Hard Skills</p>
+                        <p className={styles.content}>Java</p>
+                        <p className={styles.content}>Python</p>
+                        <p className={styles.content}>JavaScript (React, Node.js, jQuery, NextJS)</p>
+                        <p className={styles.content}>HTML</p>
+                        <p className={styles.content}>CSS/SCSS</p>
+                        {/* <p className={styles.content}>React, Node.js, jQuery, NextJS</p> */}
+                    </div>
                 </div>
                 <div ref={education} className={`${styles.educationCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(education)}></IoClose>

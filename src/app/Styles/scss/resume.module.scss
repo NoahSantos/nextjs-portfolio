@@ -216,6 +216,19 @@
         .soft, .hard{
             display: flex;
             flex-direction: column;
+            width: 50%;
+            padding: clamp(1rem, 0.688rem + 2.492vh, 2rem) clamp(1rem, 0.839rem + 1.29vw, 2rem) clamp(1rem, 0.688rem + 2.492vh, 2rem) clamp(1rem, 0.839rem + 1.29vw, 2rem);
+
+            .title {
+                font-size: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem));
+                color: black;
+                font-weight: bold;
+            }
+        
+            .content {
+                color: black;
+                font-size: min(clamp(0.5rem, 0.033rem + 3.738vh, 2rem), clamp(0.5rem, 0.258rem + 1.935vw, 2rem));
+            }
         }
     }
 
@@ -268,6 +281,19 @@
         .temp{
             top: 0;
             left: 50%;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .cont {
+        .skillsCont {
+            flex-direction: column;
+
+            .soft, .hard{
+                width: 100%;
+                justify-content: center;
+            }
         }
     }
 }
