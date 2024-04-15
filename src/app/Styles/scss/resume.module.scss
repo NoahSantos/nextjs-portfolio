@@ -180,7 +180,7 @@
     .sect{
         width: 70vw;
         height: 70vh;
-        padding: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem)) 2rem 2rem 2rem;
+        padding: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem)) 2rem 2rem clamp(1rem, 0.881rem + 0.952vw, 2rem);
         background-color: white;
         position: absolute;
         opacity: 0;
@@ -229,6 +229,11 @@
         .content{
             color: black;
             font-size: min(clamp(0.5rem, 0.26rem + 1.923vh, 1.25rem), clamp(0.5rem, 0.411rem + 0.714vw, 1.25rem)   );
+        }
+
+        .cert{
+            font-size: min(clamp(1rem, 0.679rem + 2.564vh, 2rem), clamp(1rem, 0.881rem + 0.952vw, 2rem));
+            color: black;
         }
     }
 }

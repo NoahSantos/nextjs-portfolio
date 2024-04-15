@@ -102,10 +102,20 @@ export default function Resume() {
                 <div ref={certification} className={`${styles.certificationsCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(certification)}></IoClose>
                     <p className={styles.title}>Certifications / Awards</p>
+                    <p className={styles.cert}>Technical Skills Certification - 2021</p>
+                    <p className={styles.cert}>Information Technology Specialist in Java - 2022</p>
+                    <p className={styles.cert}>Congressional App Challenge - 2022</p>
+                    <p className={styles.cert}>Information Technology Specialist in HTML5 Application Development - 2023</p>
+                    <p className={styles.cert}>WBLA Internship - 2024</p>
+                    <p className={styles.cert}>ITS OD 302 - Javascript - 2024</p>
                 </div>
                 <div ref={experience} className={`${styles.experienceCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(experience)}></IoClose>
                     <p className={styles.title}>Experience</p>
+                    <p className={styles.subTitle}>2024: MongoDB Intern</p>
+                    <p className={styles.content}>At West-MEC, we participated in a WBLA internship. I was the team leader of my group and worked for MongoDB. During this internship, I was honing in my communication, collaboration, time management, professional, and leadership skills.</p>
+                    <p className={styles.subTitle}>2023 - Present: CodeNinjas</p>
+                    <p className={styles.content}>I am currently working as a code sensei at CodeNinjas. Here, I am teaching younger kids how to code and assisting them with their projects if needed. I have learned many valuable soft-skill such as communication and patience.</p>
                 </div>
             </div>
         </>
