@@ -50,23 +50,29 @@ export default function Resume() {
     }, [rotation]);
 
     const showInfo = (section) =>{
-        console.log('clicked')
-        console.log(section.current)
+        gsap.to([skill.current, education.current, certification.current, experience.current], {
+            duration: 0.3, 
+            y: 100, 
+            opacity: 0,
+        });
+        [skill.current, education.current, certification.current, experience.current].forEach(element=>{
+            element.classList.remove(`${styles.active}`);
+        })
         gsap.to(section.current, {
             duration: 0.3, 
             y: 0, 
             opacity: 1,
         });
+        section.current.classList.add(`${styles.active}`)
     }
     
     const closeInfo = (section) =>{
-        console.log('clicked')
-        console.log(section.current)
         gsap.to(section.current, {
             duration: 0.3, 
-            y: 100, 
+            y: 10, 
             opacity: 0,
         });
+        section.current.classList.remove(`${styles.active}`)
     }
 
     return (
@@ -83,15 +89,23 @@ export default function Resume() {
             <div className={styles.cont}>
                 <div ref={skill} className={`${styles.skillsCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(skill)}></IoClose>
+
                 </div>
                 <div ref={education} className={`${styles.educationCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(education)}></IoClose>
+                    <p className={styles.title}>Education</p>
+                    <p className={styles.subTitle}>2022 - Present: West-MEC</p>
+                    <p className={styles.content}>At the two-year West-MEC coding program, I have have been praccticing and honing both my professional skills and soft skills in different languages. I have also earned multiple certifications through this program.</p>
+                    <p className={styles.subTitle}>2020 - Present: Sandra Day O'Connor High School</p>
+                    <p className={styles.content}>At my home high school, I have learned that basics of Java and gotten two certifications through both of my coding classes there, which were Comp Sci Principles and Comp Sci A.</p>
                 </div>
                 <div ref={certification} className={`${styles.certificationsCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(certification)}></IoClose>
+                    <p className={styles.title}>Certifications / Awards</p>
                 </div>
                 <div ref={experience} className={`${styles.experienceCont} ${styles.sect}`}>
                     <IoClose className={styles.close} onClick={()=>closeInfo(experience)}></IoClose>
+                    <p className={styles.title}>Experience</p>
                 </div>
             </div>
         </>

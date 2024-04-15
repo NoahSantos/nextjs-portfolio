@@ -12,16 +12,11 @@
     overflow: hidden;
 
     .temp{
-        background-color: aqua;
         aspect-ratio: 1/1;
-        // height: calc(200vh);
-        // width: 200vw;
         height: 50vh;
-        // width: 20vw;
         position: absolute;
         left: 0;
         top: 50%;
-        // transform: translate(-50%, -50%);
 
         .square{
             height: 50%;
@@ -29,10 +24,11 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border: 3px solid white;
+            background-color: #212121;
         }
 
         .skills{
-            background-color: green;
             position: absolute;
             top: 0; left: 0;
             .skillsName{
@@ -47,7 +43,6 @@
             }
         }
         .education{
-            background-color: red;
             position: absolute;
             top: 0; right: 0;
             .educationName{
@@ -62,7 +57,6 @@
             }
         }
         .certifications{
-            background-color: blue;
             position: absolute;
             bottom: 0; left: 0;
             .certificationsName{
@@ -77,7 +71,6 @@
             }
         }
         .experience{
-            background-color: purple;
             position: absolute;
             bottom: 0; right: 0;
             .experienceName{
@@ -91,59 +84,64 @@
                 font-size: clamp(1rem, 0.679rem + 2.564vh, 2rem);
             }
         }
+    }
+
+    // .temp{
+    //     height: calc(200vh);
+    //     width: 200vw;
 
         // .skills{
-        //     // height: calc(100vh - 3rem);
-        //     // width: calc(100vw - 105px);
-        //     height: calc(10vh - 0.3rem);
-        //     width: calc(10vw - 10.5px);
-        //     background-color: yellow;
-        //     position: absolute;
-        //     right: 0;
-        //     top: 50%;
-        //     transform: translateY(-50%);
+            //     // height: calc(100vh - 3rem);
+            //     // width: calc(100vw - 105px);
+            //     height: calc(10vh - 0.3rem);
+            //     width: calc(10vw - 10.5px);
+            //     background-color: blue;
+            //     position: absolute;
+            //     right: 0;
+            //     top: 50%;
+            //     transform: translateY(-50%);
         // }
-
+    
         // .education{
-        //     // height: calc(100vh - 3rem);
-        //     // width: calc(100vw - 105px);
-        //     width: calc(10vh - 0.3rem);
-        //     height: calc(10vw - 10.5px);
-        //     background-color: purple;
-        //     position: absolute;
-        //     left: 50%;
-        //     top: 0;
-        //     transform: translateX(-50%) rotate(270deg);
-        //     transform: translateX(-50%);
-        //     // transform: translate(-50%, -50%) rotate(270deg);
+            //     // height: calc(100vh - 3rem);
+            //     // width: calc(100vw - 105px);
+            //     width: calc(10vh - 0.3rem);
+            //     height: calc(10vw - 10.5px);
+            //     background-color: purple;
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 0;
+            //     transform: translateX(-50%) rotate(270deg);
+            //     transform: translateX(-50%);
+            //     // transform: translate(-50%, -50%) rotate(270deg);
         // }
-        
+    
         // .certifications{
-        //     // height: calc(100vh - 3rem);
-        //     // width: calc(100vw - 105px);
-        //     height: calc(10vh - 0.3rem);
-        //     width: calc(10vw - 10.5px);
-        //     background-color: green;
-        //     position: absolute;
-        //     left: 0;
-        //     top: 50%;
-        //     transform: translateY(-50%) rotate(180deg);
-        //     transform: translateY(-50%);
+            //     // height: calc(100vh - 3rem);
+            //     // width: calc(100vw - 105px);
+            //     height: calc(10vh - 0.3rem);
+            //     width: calc(10vw - 10.5px);
+            //     background-color: green;
+            //     position: absolute;
+            //     left: 0;
+            //     top: 50%;
+            //     transform: translateY(-50%) rotate(180deg);
+            //     transform: translateY(-50%);
         // }
-
+    
         // .experience{
-        //     // height: calc(100vh - 3rem);
-        //     // width: calc(100vw - 105px);
-        //     width: calc(10vh - 0.3rem);
-        //     height: calc(10vw - 10.5px);
-        //     background-color: grey;
-        //     position: absolute;
-        //     left: 50%;
-        //     bottom: 0;
-        //     // transform: translateX(-50%) rotate(90deg);
-        //     transform: translateX(-50%);
+            //     // height: calc(100vh - 3rem);
+            //     // width: calc(100vw - 105px);
+            //     width: calc(10vh - 0.3rem);
+            //     height: calc(10vw - 10.5px);
+            //     background-color: red;
+            //     position: absolute;
+            //     left: 50%;
+            //     bottom: 0;
+            //     // transform: translateX(-50%) rotate(90deg);
+            //     transform: translateX(-50%);
         // }
-    }
+    // }
 }
 
 .cont{
@@ -156,35 +154,61 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     .sect{
         width: 70vw;
         height: 70vh;
-        background-color: beige;
-        pointer-events: auto;
+        padding: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem)) 2rem 2rem 2rem;
+        background-color: white;
         position: absolute;
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(10px);
         border-radius: 1rem;
+        overflow-y: auto;
+        pointer-events: none;
 
         .close{
             color: black;
-            font-size: 3rem;
-            padding: 0.5rem 0rem 0rem 0.5rem;
+            // font-size: 3rem;
+            font-size: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem));
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            // pointer-events: auto;
+            // padding: 0.5rem 0rem 0rem 0.5rem;
         }
     }
 
+    .active{
+        pointer-events: auto;
+    }
+
     .skillsCont{
-        
+        display: flex;
+        flex-direction: row;
     }
-    .educationCont{
 
-    }
-    .certificationsCont{
+    .educationCont, .certificationsCont, .experienceCont{
+        display: flex;
+        flex-direction: column;
 
-    }
-    .experienceCont{
+        .title{
+            font-size: min(clamp(1.5rem, 1.019rem + 3.846vh, 3rem), clamp(1rem, 0.762rem + 1.905vw, 3rem));
+            color: black;
+            font-weight: bold;
+        }
 
+        .subTitle{
+            font-size: min(clamp(1rem, 0.679rem + 2.564vh, 2rem), clamp(1rem, 0.881rem + 0.952vw, 2rem));
+            color: black;
+            font-weight: bolder;
+        }
+
+        .content{
+            color: black;
+            font-size: min(clamp(0.5rem, 0.34rem + 1.282vh, 1rem), clamp(0.5rem, 0.44rem + 0.476vw, 1rem));
+        }
     }
 }
 

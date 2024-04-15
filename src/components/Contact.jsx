@@ -21,19 +21,18 @@ export default function Contact() {
             </div>
 
             <dialog ref={modal} className='modal modal-bottom sm:modal-middle'>
-            <div className={`modal-box ${styles.modal}`}>
-                <h3 className={`font-bold text-lg ${styles.contactTitle}`}><strong>Find Me at the Following!</strong></h3>
-                <hr />
-                <p className={`py-4 ${styles.contact}`}><strong>LinkedIn:</strong> Noah Santos</p>
-                <p className={`py-4 ${styles.contact}`}><strong>GitHub:</strong> NoahSantos</p>
-                <p className={`py-4 ${styles.contact}`}><strong>Email:</strong> noahbsantos@gmail.com</p>
-                <div className="modal-action">
-                    <form method="dialog">
-                        {/* if there is a button in form, it will close the modal */}
-                        <button className={`btn ${styles.modalBtn}`}>Close</button>
-                    </form>
+                <div className={`modal-box ${styles.modal}`}>
+                    <h3 className={`font-bold text-lg ${styles.contactTitle}`}><strong>Find Me at the Following!</strong></h3>
+                    <hr />
+                    <p className={`py-4 ${styles.contact}`}><strong>LinkedIn:</strong> Noah Santos</p>
+                    <p className={`py-4 ${styles.contact}`}><strong>GitHub:</strong> NoahSantos</p>
+                    <p className={`py-4 ${styles.contact}`}><strong>Email:</strong> noahbsantos@gmail.com</p>
+                    <div className="modal-action">
+                        <form method="dialog">
+                            <button className={`btn ${styles.modalBtn}`}>Close</button>
+                        </form>
+                    </div>
                 </div>
-            </div>
             </dialog>
         </>
     );
