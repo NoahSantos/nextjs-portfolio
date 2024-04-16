@@ -1,5 +1,41 @@
-.container{
-    .panel{
-        background-color: #fff;
+.aboutCont{
+    overflow: hidden;
+    z-index: 3;
+    // display: flex;
+
+    .firstContainer {
+        background-color: red;
+        min-height: 100vh;
+        height: 200vh;
+        min-width: 100vw;
+        z-index: 4;
+        position: relative;
+    }
+
+    .container {
+        width: 400vw;
+        height: 100vh;
+        display: flex;
+        flex-wrap: nowrap;
+        z-index: 3;
+
+        .panel {
+            position: relative;
+            // height: 100vh;
+            height: 100%;
+            width: 100vw;
+            background-color: #fff;
+            border: 2px solid black;
+
+            .first{
+                // min-height: 100vh;
+            }
+        }
+    }
+
+    .lastContainer {
+        min-height: 100vh;
+        min-width: 100vw;
+        background-color: blue;
     }
 }
