@@ -121,7 +121,7 @@ export default function Resume() {
                     <p className={styles.title}>Education</p>
                     <p className={styles.subTitle}>2022 - Present: West-MEC</p>
                     <p className={styles.content}>At the two-year West-MEC coding program, I have have been praccticing and honing both my professional skills and soft skills in different languages. I have also earned multiple certifications through this program.</p>
-                    <p className={styles.subTitle}>2020 - Present: Sandra Day O'Connor High School</p>
+                    <p className={styles.subTitle}>2020 - Present: Sandra Day O&apos;Connor High School</p>
                     <p className={styles.content}>At my home high school, I have learned that basics of Java and gotten two certifications through both of my coding classes there, which were Comp Sci Principles and Comp Sci A.</p>
                 </div>
                 <div ref={certification} className={`${styles.certificationsCont} ${styles.sect}`}>
