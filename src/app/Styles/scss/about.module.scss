@@ -1,40 +1,62 @@
-.aboutCont{
-    z-index: 1;
-    position: absolute;
-    top: 0; left: 0;
-    // display: flex;
+.testCont{
+    display: flex;
+    flex-direction: column;
+    // height: 600vh;
+    // width: 1200vw;
 
-    .firstContainer {
-        background-color: red;
-        min-height: 100vh;
-        height: 100vh;
-        min-width: 100vw;
-        z-index: 2;
-        position: relative;
-        padding: 3rem 0rem 0rem 50px;
+    .one{
+        // position: absolute;
+        // top: 0; left: 0;
     }
 
-    .container {
-        width: 400vw;
-        height: 100vh;
-        display: flex;
-        flex-wrap: nowrap;
-        z-index: 2;
+    .two{
+        // position: absolute;
+        // top: 300vh;
+        // margin-top: 840vh;
+        // margin-left: 600vw;
+    }
+    
+    .aboutCont {
+        z-index: 1;
+        // position: absolute;
+        // top: 0; left: 0;
+        // display: flex;
+        // position: relative;
+        // height: 300vh;
+        // width: 600vw;
 
-        .panel {
-            position: relative;
+        .firstContainer {
+            background-color: red;
+            min-height: 100vh;
             height: 100vh;
-            // height: 100%;
-            width: 100vw;
-            background-color: #fff;
-            border: 2px solid black;
+            min-width: 100vw;
+            z-index: 2;
+            position: relative;
+            padding: 3rem 0rem 0rem 50px;
         }
-    }
 
-    .lastContainer {
-        min-height: 100vh;
-        min-width: 100vw;
-        background-color: blue;
+        .container {
+            width: 400vw;
+            height: 100vh;
+            display: flex;
+            flex-wrap: nowrap;
+            z-index: 2;
+
+            .panel {
+                position: relative;
+                height: 100vh;
+                // height: 100%;
+                width: 100vw;
+                background-color: #fff;
+                border: 2px solid black;
+            }
+        }
+
+        .lastContainer {
+            min-height: 100vh;
+            min-width: 100vw;
+            background-color: blue;
+        }
     }
 }
 
