@@ -71,6 +71,21 @@
         .timeline {
             background-color: orange;
         }
+
+        .hobbySection{
+            height: 300vh;
+            width: 100vw;
+            position: absolute;
+            background-color: royalblue;
+            z-index: 10;
+        }
+        .timeSection{
+            height: 300vh;
+            width: 100vw;
+            position: absolute;
+            background-color: navy;
+            z-index: 10;
+        }
     }
 }
 
