@@ -37,7 +37,8 @@ export default function About() {
     //     };
     // }, []);
 
-    let classes = [styles.one, styles.two]
+    let classOne = [styles.intro, styles.about, styles.hobbies];
+    let classTwo = [styles.hobbies, styles.timeline]
 
     return (
         // <div className={styles.aboutCont} ref={cont}>
@@ -57,8 +58,8 @@ export default function About() {
             
         // </div>
         <div className={styles.testCont}>
-            <Scrolling classes={classes[0]}></Scrolling>
-            <Scrolling classes={classes[1]}></Scrolling>
+            <Scrolling classes={classOne} boxes={3}></Scrolling>
+            <Scrolling classes={classTwo} boxes={2}></Scrolling>
         </div>
     );
 }

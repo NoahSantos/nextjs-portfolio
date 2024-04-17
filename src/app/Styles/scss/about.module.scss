@@ -3,18 +3,6 @@
     flex-direction: column;
     // height: 600vh;
     // width: 1200vw;
-
-    .one{
-        // position: absolute;
-        // top: 0; left: 0;
-    }
-
-    .two{
-        // position: absolute;
-        // top: 300vh;
-        // margin-top: 840vh;
-        // margin-left: 600vw;
-    }
     
     .aboutCont {
         z-index: 1;
@@ -49,13 +37,39 @@
                 width: 100vw;
                 background-color: #fff;
                 border: 2px solid black;
+                padding: 3rem 0rem 0rem 50px;
+            }
+
+            .intro{
+                background-color: green;
+            }
+
+            .about{
+                background-color: purple;
+            }
+
+            .hobbies{
+                background-color: red;
+            }
+
+            .timeline{
+                background-color: orange;
             }
         }
 
         .lastContainer {
             min-height: 100vh;
             min-width: 100vw;
-            background-color: blue;
+            background-color: royalblue;
+            padding: 0rem 0rem 0rem 50px;
+        }
+
+        .hobbies {
+            background-color: red;
+        }
+
+        .timeline {
+            background-color: orange;
         }
     }
 }
