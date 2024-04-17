@@ -1,29 +1,24 @@
 .topBar {
     height: 3rem;
+    width: 100%;
     background-color: #003789;
     border-bottom: 3px solid black;
-}
-
-.navbar {
     z-index: 3;
-    background: #fff;
-    pointer-events: none;
-    position: absolute;
-    left: 2rem;
-    width: 0.5rem;
-    height: 75%;
-    border-radius: 10rem;
-    transform: translateY(-800px);
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .app {
     width: 250px;
-    height: calc(100% - 3rem);
+    height: calc(100vh - 3rem);
     display: flex;
     justify-content: center;
     flex-direction: column;
     pointer-events: none;
-    position: absolute;
+    position: fixed;
+    top: 3rem; left: 0;
+    z-index: 3;
 
     .box {
         z-index: 2;
@@ -38,10 +33,22 @@
         text-align: center;
         pointer-events: auto;
     }
+
+    .navbar {
+        z-index: 3;
+        background: #fff;
+        pointer-events: none;
+        position: absolute;
+        left: 2rem;
+        width: 0.5rem;
+        height: 75%;
+        border-radius: 10rem;
+        transform: translateY(-900px);
+    }
 }
 
 .linkCont{
-    z-index: 3;
+    z-index: 4;
     position: absolute;
     left: 4rem; top: 7rem;
     height: 18rem;
@@ -90,7 +97,7 @@
         /* border-radius: 1rem; */
         width: 0rem;
         height: 0rem;
-        position: absolute;
+        position: fixed;
         z-index: 3;
         /* background-color: #181818; */
         background-color: #003789;
