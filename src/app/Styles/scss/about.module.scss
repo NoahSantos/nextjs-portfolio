@@ -14,24 +14,63 @@
             .panel {
                 position: relative;
                 height: 100vh;
-                // height: 100%;
                 width: 100vw;
-                background-color: #fff;
-                border: 2px solid black;
+                background-color: #181818;
                 padding: 3rem 0rem 0rem 50px;
             }
 
             .intro{
-                background-color: green;
-                .introCont{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 1rem;
+                // background-image: url('../../../../public/images/AboutCropped.JPG');
+                background-size: cover;
+
+                .imageCont {
+                    height: min(clamp(8rem, 1.146rem + 54.829vh, 30rem), clamp(8rem, 4.452rem + 28.387vw, 30rem));
+                    aspect-ratio: 1/1;
+                    border-radius: 2rem;
+                    display: flex;
+                    align-items: center;
+            
+                    .img {
+                        width: 100%;
+                        border-radius: 2rem;
+                        // box-shadow: 0 0 40px 5px #131313e8;
+                    }
+                }
+
+                .nameCont{
+                    margin: min(clamp(0.5rem, -0.59rem + 8.723vh, 4rem), clamp(0.5rem, -0.065rem + 4.516vw, 4rem));
+
+                    .nameText{
+                        font-size: min(clamp(1rem, -1.181rem + 17.445vh, 8rem), clamp(1rem, -0.129rem + 9.032vw, 8rem));
+                        font-weight: bolder;
+                    }
+                }
+            }
+
+            .about{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .title{
+                    font-weight: bold;
+                    font-size: min(clamp(1rem, -1.181rem + 17.445vh, 8rem), clamp(1rem, -0.129rem + 9.032vw, 8rem));
+                }
+
+                .content{
                     width: 100%;
                     height: 100%;
                     display: flex;
-                    justify-content: space-evenly;
+                    flex-direction: row;
                     align-items: center;
+                    justify-content: center;
 
                     .imageCont {
-                        height: min(clamp(8rem, 1.146rem + 54.829vh, 30rem), clamp(8rem, 4.452rem + 28.387vw, 30rem));
+                        height: min(clamp(8rem, 2.704rem + 42.368vh, 25rem), clamp(8rem, 5.258rem + 21.935vw, 25rem));
                         aspect-ratio: 1/1;
                         border-radius: 2rem;
                         display: flex;
@@ -40,24 +79,90 @@
                         .img {
                             width: 100%;
                             border-radius: 2rem;
+                            // box-shadow: 0 0 40px 5px #131313e8;
                         }
                     }
 
-                    .nameCont{
-                        .nameText{
-                            font-size: min(clamp(4rem, 2.754rem + 9.969vh, 8rem), clamp(4rem, 3.355rem + 5.161vw, 8rem));
-                            font-weight: bold;
-                        }
+                    .aboutMe{
+                        font-size: min(clamp(0.5rem, -0.279rem + 6.231vh, 3rem), clamp(0.5rem, 0.097rem + 3.226vw, 3rem));
+                        width: 40%;
+                        margin: min(clamp(0.5rem, -0.59rem + 8.723vh, 4rem), clamp(0.5rem, -0.065rem + 4.516vw, 4rem));
                     }
                 }
             }
 
-            .about{
-                background-color: purple;
-            }
-
             .hobbies{
-                background-color: red;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .title {
+                    font-weight: bold;
+                    font-size: min(clamp(1rem, -1.181rem + 17.445vh, 8rem), clamp(1rem, -0.129rem + 9.032vw, 8rem));
+                }
+
+                .hobbyCont{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    .hobbyTitle{
+                        font-size: min(clamp(1.5rem, 0.721rem + 6.231vh, 4rem), clamp(1.5rem, 1.097rem + 3.226vw, 4rem));
+                    }
+
+                    .hobbyContent{
+                        width: auto;
+                        display: inline-flex;
+                        flex-direction: row;
+                        // height: auto;
+
+                        .hobbyImgCont{
+                            height: min(clamp(4rem, 0.885rem + 24.922vh, 14rem), clamp(4rem, 2.387rem + 12.903vw, 14rem));
+                            aspect-ratio: 1/1;
+
+                            .hobbyImg{
+                                height: 100%;
+                                width: 100%;
+                                border-radius: 1rem;
+                            }
+                        }
+                        
+                        .hobbyDesc{
+                            display: flex;
+                            align-items: center;
+                            font-size: min(clamp(1rem, 0.688rem + 2.492vh, 2rem), clamp(1rem, 0.839rem + 1.29vw, 2rem));
+                        }
+
+                        .hobbyDescL{
+                            padding-left: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
+                            width: 40%;
+                        }
+
+                        .hobbyDescR{
+                            padding-right: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
+                            width: 42%;
+                        }
+                    }
+
+                    .hobbyContentL{
+                        flex-direction: row;
+                    }
+
+                    .hobbyContentR{
+                        flex-direction: row-reverse;
+                    }
+                }
+
+                .hobbyContL{
+                    padding-left: clamp(1rem, 0.839rem + 1.29vw, 2rem);
+                    text-align: left;
+                }
+
+                .hobbyContR{
+                    padding-right: calc(clamp(1rem, 0.839rem + 1.29vw, 2rem) + 55px);
+                    text-align: right;
+                }
             }
 
             .timeline{
@@ -66,14 +171,78 @@
         }
 
         .lastContainer {
-            min-height: 100vh;
-            min-width: 100vw;
-            background-color: royalblue;
-            padding: 0rem 0rem 0rem 50px;
-        }
-
-        .hobbies {
-            background-color: red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 3rem 0rem 0rem 50px;
+        
+            .title {
+                font-weight: bold;
+                font-size: min(clamp(1rem, -1.181rem + 17.445vh, 8rem), clamp(1rem, -0.129rem + 9.032vw, 8rem));
+            }
+        
+            .hobbyCont {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+        
+                .hobbyTitle {
+                    font-size: min(clamp(1.5rem, 0.721rem + 6.231vh, 4rem), clamp(1.5rem, 1.097rem + 3.226vw, 4rem));
+                }
+        
+                .hobbyContent {
+                    width: auto;
+                    display: inline-flex;
+                    flex-direction: row;
+                    // height: auto;
+        
+                    .hobbyImgCont {
+                        height: min(clamp(4rem, 0.885rem + 24.922vh, 14rem), clamp(4rem, 2.387rem + 12.903vw, 14rem));
+                        aspect-ratio: 1/1;
+        
+                        .hobbyImg {
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 1rem;
+                        }
+                    }
+        
+                    .hobbyDesc {
+                        display: flex;
+                        align-items: center;
+                        font-size: min(clamp(1rem, 0.688rem + 2.492vh, 2rem), clamp(1rem, 0.839rem + 1.29vw, 2rem));
+                    }
+        
+                    .hobbyDescL {
+                        padding-left: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
+                        width: 40%;
+                    }
+        
+                    .hobbyDescR {
+                        padding-right: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
+                        width: 42%;
+                    }
+                }
+        
+                .hobbyContentL {
+                    flex-direction: row;
+                }
+        
+                .hobbyContentR {
+                    flex-direction: row-reverse;
+                }
+            }
+        
+            .hobbyContL {
+                padding-left: clamp(1rem, 0.839rem + 1.29vw, 2rem);
+                text-align: left;
+            }
+        
+            .hobbyContR {
+                padding-right: calc(clamp(1rem, 0.839rem + 1.29vw, 2rem) + 55px);
+                text-align: right;
+            }
         }
 
         .timeline {
@@ -97,27 +266,62 @@
     }
 }
 
-// .aboutCont{
-//     width: 200vw;
-//     height: 400vh;
-//     display: flex;
-//     // overflow: hidden;
-//     position: absolute;
-//     top: 0; left: 0;
-//     z-index: 1;
+@media (max-height: 525px),
+(max-width: 660px){
+    .testCont{
+        .aboutCont{
+            .container{
+                .panel{
+                    padding: 3rem 0rem 0rem 0rem;
+                }
+            }
 
-//     .container1{
-//         width: 100vw;
-//         height: 200vh;
-//         background-color: red;
-//         padding: 3rem 0rem 0rem 50px;
-//     }
-//     .container2{
-//         width: 100vw;
-//         height: 200vh;
-//         background-color: blue;
-//         padding: 3rem 0rem 0rem 50px;
-//         position: relative;
-//         margin-top: 100vh;
-//     }
-// }
+            .lastContainer{
+                padding: 3rem 0rem 0rem 0rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 639px),
+(max-height: 450px) {
+    .testCont {
+        .aboutCont {
+            .container {
+                .hobbies {
+                    .hobbyContR {
+                        padding-right: clamp(1rem, 0.839rem + 1.29vw, 2rem);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1370px){
+    .testCont {
+        .aboutCont {
+            .container {
+                .hobbies {
+                    .hobbyCont {
+                        .hobbyContent {
+                            .hobbyDesc {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .lastContainer {
+                .hobbyCont {
+                    .hobbyContent {
+                        .hobbyDesc {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
