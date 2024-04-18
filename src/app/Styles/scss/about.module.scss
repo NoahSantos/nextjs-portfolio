@@ -115,6 +115,7 @@
                         width: auto;
                         display: inline-flex;
                         flex-direction: row;
+                        align-items: center;
                         // height: auto;
 
                         .hobbyImgCont{
@@ -133,17 +134,19 @@
                         .hobbyDesc{
                             display: flex;
                             align-items: center;
-                            font-size: min(clamp(1rem, 0.688rem + 2.492vh, 2rem), clamp(1rem, 0.839rem + 1.29vw, 2rem));
+                            font-size: min(clamp(0.5rem, 0.033rem + 3.738vh, 2rem), clamp(0.5rem, 0.258rem + 1.935vw, 2rem));
                         }
 
                         .hobbyDescL{
                             padding-left: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
                             width: 40%;
+                            padding-right: 0.5rem;
                         }
 
                         .hobbyDescR{
                             padding-right: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
                             width: 42%;
+                            padding-left: 0.5rem;
                         }
                     }
 
@@ -198,6 +201,7 @@
                     width: auto;
                     display: inline-flex;
                     flex-direction: row;
+                    align-items: center;
                     // height: auto;
         
                     .hobbyImgCont {
@@ -216,17 +220,19 @@
                     .hobbyDesc {
                         display: flex;
                         align-items: center;
-                        font-size: min(clamp(1rem, 0.688rem + 2.492vh, 2rem), clamp(1rem, 0.839rem + 1.29vw, 2rem));
+                        font-size: min(clamp(0.5rem, 0.033rem + 3.738vh, 2rem), clamp(0.5rem, 0.258rem + 1.935vw, 2rem));
                     }
         
                     .hobbyDescL {
                         padding-left: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
                         width: 40%;
+                        padding-right: 0.5rem;
                     }
         
                     .hobbyDescR {
                         padding-right: clamp(0.75rem, 0.629rem + 0.968vw, 1.5rem);
                         width: 42%;
+                        padding-left: 0.5rem;
                     }
                 }
         

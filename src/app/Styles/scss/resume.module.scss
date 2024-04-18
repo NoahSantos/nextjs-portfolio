@@ -1,12 +1,13 @@
 .resumeCont{
     z-index: 1;
-    height: 100vh;
+    height: calc(100vh - 3rem);
     width: calc(100vw - 105px);
     display: flex;
     flex-direction: row;
     background-color: #181818;
-    position: relative;
+    position: absolute;
     left: 50px;
+    top: 0;
     padding-right: 55px;
     padding-left: 50px;
     overflow: hidden;
@@ -273,6 +274,7 @@
 (max-height: 450px) {
     .resumeCont{
         padding: 0;
+        top: 3rem;
         width: 100%;
     }
 }

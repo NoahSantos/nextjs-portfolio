@@ -1,11 +1,12 @@
 .container{
     z-index: 1;
-    height: 100vh;
+    height: calc(100vh - 3rem);
     width: calc(100vw - 105px);
     display: flex;
     flex-direction: row;
     background-color: #181818;
-    position: relative;
+    position: absolute;
+    top: 3rem;
     left: 50px;
     padding: 3rem 55px 0rem 50px;
     overflow-y: hidden;
