@@ -118,6 +118,8 @@
                         // height: auto;
 
                         .hobbyImgCont{
+                            display: flex;
+                            align-items: center;
                             height: min(clamp(4rem, 0.885rem + 24.922vh, 14rem), clamp(4rem, 2.387rem + 12.903vw, 14rem));
                             aspect-ratio: 1/1;
 
@@ -171,6 +173,7 @@
         }
 
         .lastContainer {
+            height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -198,6 +201,8 @@
                     // height: auto;
         
                     .hobbyImgCont {
+                        display: flex;
+                        align-items: center;
                         height: min(clamp(4rem, 0.885rem + 24.922vh, 14rem), clamp(4rem, 2.387rem + 12.903vw, 14rem));
                         aspect-ratio: 1/1;
         
@@ -292,6 +297,13 @@
                     .hobbyContR {
                         padding-right: clamp(1rem, 0.839rem + 1.29vw, 2rem);
                     }
+                }
+            }
+
+            .lastContainer {
+                .hobbyContR {
+                    padding-right: clamp(1rem, 0.839rem + 1.29vw, 2rem);
+                    text-align: right;
                 }
             }
         }
