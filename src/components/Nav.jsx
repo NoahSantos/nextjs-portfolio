@@ -85,7 +85,7 @@ export default function Nav() {
             await gsap.to(mobile.current, {
                 duration: 0.2,  
                 width: '100vw',
-                height: '100vh',
+                height: '110vh',
             });
             gsap.to(mobileList.current, {
                 duration: 0.3, 

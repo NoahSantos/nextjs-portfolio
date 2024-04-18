@@ -55,10 +55,10 @@
 
 @media (max-width: 639px), (max-height: 450px) {
     .contactBar {
-        height: 100%;
-        width: 100%;
+        height: 100vh;
+        width: 100vw;
         color: #fff;
-        position: sticky;
+        position: absolute;
         top: 0;
         pointer-events: none;
 
