@@ -3,6 +3,8 @@ import styles from '../app/Styles/scss/about.module.scss';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Image from 'next/image';
+import about from '../../public/images/About.JPG'
 
 export default function Scrolling({classes, boxes, section}) {
     const containerRef = useRef(null);
@@ -52,22 +54,19 @@ export default function Scrolling({classes, boxes, section}) {
 
     return (
         <div className={`${styles.aboutCont}`} ref={cont}>
-            {/* <div className={styles.firstContainer} ref={firstCont}>
-                <h1>Testing horizontal scrolling w/ three sections</h1>
-                <h2>First Container</h2>
-            </div> */}
             <div className={styles.container} ref={containerRef}>
-                {/* <div className={`${styles.description} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>
-                    <div className={styles.first}>SCROLL DOWN</div>
-                </div>
-                <section className={`${styles.description} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>ONE</section>
-                <section  className={`${styles.description} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>TWO</section>
-                <section  className={`${styles.description} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>THREE</section> */}
-                {/* {horizontalSections} */}
                 {section === 1 ? 
                     <>
                         <div className={`${classes[0]} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>
-                            <div className={styles.first}>1</div>
+                            <div className={styles.introCont}>
+                                <div className={styles.imageCont}>
+                                    <Image src={about} alt='picture of me' className={styles.img}></Image>
+                                </div>
+                                <div className={styles.nameCont}>
+                                    <p className={styles.nameText}>Hi,</p>
+                                    <p className={styles.nameText}>I&apos;m Noah</p>
+                                </div>
+                            </div>
                         </div> : 
                         <div className={`${classes[1]} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>
                             <div className={styles.first}>1</div>
