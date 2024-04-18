@@ -1,7 +1,9 @@
 "use client";
-import {useRef, useEffect} from 'react';
+import { useRef, useEffect } from 'react';
 import styles from './Styles/scss/home.module.scss';
 import { gsap } from "gsap";
+import Image from 'next/image'
+import image from '../../public/images/Noah-Wall.jpeg'
 
 export default function Page() {
   let line = useRef();
@@ -13,27 +15,27 @@ export default function Page() {
   let img = useRef();
 
   useEffect(() => {
-    (async()=>{
+    (async () => {
       gsap.to(info.current, {
-        duration: 0.8, 
+        duration: 0.8,
         opacity: 1,
         y: 0,
       })
       gsap.to(img.current, {
-        duration: 0.8, 
+        duration: 0.8,
         opacity: 1,
       })
       await gsap.to(line.current, {
-        duration: 0.4, 
-        height: '100%', 
+        duration: 0.4,
+        height: '100%',
       });
       gsap.to(firstN.current, {
-        duration: 0.4, 
-        x: `-=${firstNCont.current.getBoundingClientRect().width}`, 
+        duration: 0.4,
+        x: `-=${firstNCont.current.getBoundingClientRect().width}`,
       });
       gsap.to(lastN.current, {
-        duration: 0.4, 
-        x: `+=${lastNCont.current.getBoundingClientRect().width}`, 
+        duration: 0.4,
+        x: `+=${lastNCont.current.getBoundingClientRect().width}`,
       });
     })()
   }, []);
@@ -59,7 +61,9 @@ export default function Page() {
       </div>
 
       <div className={styles.imageSect}>
-        <div ref={img} className={styles.imageCont}></div>
+        <div ref={img} className={styles.imageCont}>
+          <Image src={image} alt='my image' className={styles.img}></Image>
+        </div>
       </div>
     </div>
   )

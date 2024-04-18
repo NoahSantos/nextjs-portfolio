@@ -1,14 +1,13 @@
 .container{
     z-index: 1;
-    height: calc(100vh - 3rem);
+    height: 100vh;
     width: calc(100vw - 105px);
     display: flex;
     flex-direction: row;
     background-color: #181818;
     position: relative;
     left: 50px;
-    padding-right: 55px;
-    padding-left: 50px;
+    padding: 3rem 55px 0rem 50px;
     overflow-y: hidden;
     
     .infoCont{
@@ -111,11 +110,20 @@
         align-items: center;
 
         .imageCont{
-            width: clamp(8rem, 5.479rem + 16.134vw, 20rem);
-            height: clamp(8rem, 5.479rem + 16.134vw, 20rem);
-            background-color: antiquewhite;
+            // width: clamp(8rem, 5.479rem + 16.134vw, 20rem);
+            height: clamp(8rem, 4.262rem + 29.907vh, 20rem);
+            aspect-ratio: 1/1;
+            // background-color: antiquewhite;
             border-radius: 2rem;
             opacity: 0;
+            display: flex;
+            align-items: center;
+
+            .img{
+                width: 100%;
+                // height: 100%;
+                border-radius: 2rem;
+            }
         }
     }
 }
@@ -221,25 +229,42 @@
 @media (max-height: 400px){
     .container {
         .infoCont{
+            flex-direction: row;
+            justify-content: space-evenly;
+
             .brief{
-                display: none;
+                .briefInfo{
+                    padding: 0;
+                }
             }
+        }
+
+        .imageSect{
+            display: none;
         }
     }
 }
 
 @media (max-height: 450px) {
     .container {
-        .infoCont {
-            .brief {
-                display: none;
-            }
-        }
-
         .imageSect {
             .imageCont{
                 width: 10rem;
                 height: 10rem;
+            }
+        }
+    }
+}
+
+@media (max-height: 360px) {
+    .container {
+        .infoCont{
+            .brief{
+                display: none;
+            }
+
+            .name{
+
             }
         }
     }
