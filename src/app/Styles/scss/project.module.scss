@@ -2,24 +2,51 @@
     position: absolute;
     top: 0; left: 0;
     overflow: hidden;
+    background-color: #181818;
     // display: flex;
 
     .container {
         width: 100vw;
-        min-height: 100vh;
+        // min-height: 100vh;
         display: flex;
         justify-content: space-evenly;
-        flex-wrap: nowrap;
-        padding: 4rem 55px 0px 50px;
+        flex-wrap: wrap;
+        padding: 3rem 55px 1rem 50px;
 
         .card{
-            // width: 90%;
-            height: 45%;
+            margin-top: 1rem;
+            width: 31%;
+            height: 20rem;
 
-            .btn{
-                position: absolute;
-                right: 1rem;
-                bottom: 0.5rem;
+            figure{
+                max-width: 65%;
+
+                .img{
+                    height: 100%;
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            .body{
+                position: relative;
+                min-width: 4rem;
+
+                .title {
+                    position: absolute;
+                    left: 1rem;
+                    top: 0.5rem;
+                    font-size: min(clamp(1rem, -0.24rem + 3.306vh, 1.5rem), clamp(1rem, 0.643rem + 0.952vw, 1.5rem));
+                }
+
+                .btnCont{
+                    .btn {
+                        padding: 0.15rem 0.5rem 0.15rem 0.5rem;
+                        position: absolute;
+                        right: 0.5rem;
+                        bottom: 0.5rem;
+                        font-size: min(clamp(0.5rem, -1.36rem + 4.959vh, 1.25rem), clamp(0.5rem, -0.036rem + 1.429vw, 1.25rem));
+                    }
+                }
             }
         }
     }
@@ -39,6 +66,38 @@
     .projectCont {
         .container {
             padding-right: 0;
+        }
+    }
+}
+
+@media (max-width: 650px){
+    .projectCont {
+        .container {
+            .card {
+                width: 45%;
+                height: 15rem;
+
+                .body{
+                    .title{
+                        left: 0.5rem;
+                        padding-right: 0.75rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1025px) {
+    .projectCont {
+        .container {
+            .card {
+                height: 23rem;
+
+                figure {
+                    max-width: 100%;
+                }
+            }
         }
     }
 }
