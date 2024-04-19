@@ -9,7 +9,7 @@ import about from '../../public/images/Noah-Chair.jpeg';
 import gaming from '../../public/images/Total War.jpg'
 import history from '../../public/images/History.jpg';
 import song from '../../public/images/Song.jpg';
-import walking from '../../public/images/Walking.jpg';
+import walking from '../../public/images/Walking.JPG';
 import travel from '../../public/images/Travel.jpg'
 import reading from '../../public/images/Reading.JPG';
 

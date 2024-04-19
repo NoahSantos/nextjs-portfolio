@@ -4,10 +4,14 @@ import Image from 'next/image';
 import history from '../../../public/images/History.jpg';
 import Card from '../../components/Card';
 
-export default function About() {
+export default function Project() {
     return (
         <div className={styles.projectCont}>
             <div className={styles.container}>
+                <Card img={history} title={'New album is released!'}></Card>
+                <Card img={history} title={'New album is released!'}></Card>
+                <Card img={history} title={'New album is released!'}></Card>
+                <Card img={history} title={'New album is released!'}></Card>
                 <Card img={history} title={'New album is released!'}></Card>
                 <Card img={history} title={'New album is released!'}></Card>
                 <Card img={history} title={'New album is released!'}></Card>

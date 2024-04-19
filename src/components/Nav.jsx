@@ -85,7 +85,7 @@ export default function Nav() {
             await gsap.to(mobile.current, {
                 duration: 0.2,  
                 width: '100vw',
-                height: '110vh',
+                height: '140vh',
             });
             gsap.to(mobileList.current, {
                 duration: 0.3, 
@@ -97,38 +97,9 @@ export default function Nav() {
         }
     }
     
-    // const onEnter = async() => {
-    //     await gsap.to(box.current, {
-    //         duration: 0.4, 
-    //         x: -50, 
-    //         stagger: 0.025,
-    //         ease: "back.in"
-    //     });
-    //     gsap.to(bar.current, {
-    //         duration: 0.4, 
-    //         y: 90, 
-    //     });
-    // };
-
-    // const onLeave = async() => {
-    //     await gsap.to(bar.current, {
-    //         duration: 0.4, 
-    //         y: -500, 
-    //     });
-    //     await gsap.to(box.current, {
-    //         duration: 0.4, 
-    //         x: -200, 
-    //         stagger: 0.025,
-    //         ease: "back.in"
-    //     });
-    // };
-    
     return (
         <>
-            <div className={styles.topBar}>
-
-            </div>
-
+            <div className={styles.topBar}></div>
 
             <div className={styles.app}>
                 <div ref={links} className={styles.linkCont}>
@@ -149,14 +120,15 @@ export default function Nav() {
             <div ref={cont} className={styles.burgerCont}>
                 <HiMenuAlt2 className={styles.mobileBurger} onClick={openMobile} />
             </div>
-            <div ref={mobile} className={styles.mobileNav}></div>
-            {/* <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose> */}
-            <div className={styles.mobileList}>
-                <div><Link ref={mobilePushRef} className={pathname === '/' ? styles.mobileActive : styles.mobileListLink} href="/">Home</Link></div>
-                <div><Link ref={mobilePushRef} className={pathname === '/about' ? styles.mobileActive : styles.mobileListLink} href="/about">About</Link></div>
-                <div><Link ref={mobilePushRef} className={pathname === '/resume' ? styles.mobileActive : styles.mobileListLink} href="/resume">Resume</Link></div>
-                <div><Link ref={mobilePushRef} className={pathname === '/project' ? styles.mobileActive : styles.mobileListLink} href="/projects">Projects</Link></div>
+            <div ref={mobile} className={styles.mobileNav}>
+                <div className={styles.mobileList}>
+                    <div><Link ref={mobilePushRef} className={pathname === '/' ? styles.mobileActive : styles.mobileListLink} href="/">Home</Link></div>
+                    <div><Link ref={mobilePushRef} className={pathname === '/about' ? styles.mobileActive : styles.mobileListLink} href="/about">About</Link></div>
+                    <div><Link ref={mobilePushRef} className={pathname === '/resume' ? styles.mobileActive : styles.mobileListLink} href="/resume">Resume</Link></div>
+                    <div><Link ref={mobilePushRef} className={pathname === '/project' ? styles.mobileActive : styles.mobileListLink} href="/project">Projects</Link></div>
+                </div>
             </div>
+            {/* <IoClose className={styles.mobileBurger} onClick={openMobile}></IoClose> */}
         </>
     );
 }

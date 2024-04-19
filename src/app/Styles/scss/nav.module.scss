@@ -83,7 +83,7 @@
     }
 }
 
-.mobileNav, .mobileList, .burgerCont{
+.mobileNav, .burgerCont{
     display: none;
 }
 
@@ -102,35 +102,36 @@
         width: 0rem;
         height: 0rem;
         position: fixed;
+        top: 0;
         z-index: 3;
         /* background-color: #181818; */
         background-color: #003789;
         transform: translateY(-3rem);
-    }
 
-    .mobileList{
-        z-index: 3;
-        height: 50%;
-        position: absolute;
-        top: 3rem;
-        display: flex;
-        flex-direction: column;
-        transform: translateX(-10rem);
-        /* pointer-events: none; */
-        
-        .mobileListLink{
-            display: block;
-            color: #fff;
-            // font-size: 1.5rem;
-            font-size: clamp(1rem, 0.844rem + 1.246vh, 1.5rem);
-            margin: clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem;
-        }
-        .mobileActive{
-            display: block;
-            color: #fff;
-            font-size: clamp(1.25rem, 1.094rem + 1.246vh, 1.75rem);
-            text-decoration: underline;
-            margin: clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem;
+        .mobileList{
+            z-index: 3;
+            height: 50%;
+            position: absolute;
+            top: 4.75rem; left: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            transform: translateX(-10rem);
+            /* pointer-events: none; */
+            
+            .mobileListLink{
+                display: block;
+                color: #fff;
+                // font-size: 1.5rem;
+                font-size: clamp(1rem, 0.844rem + 1.246vh, 1.5rem);
+                margin: clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem;
+            }
+            .mobileActive{
+                display: block;
+                color: #fff;
+                font-size: clamp(1.25rem, 1.094rem + 1.246vh, 1.75rem);
+                text-decoration: underline;
+                margin: clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem clamp(0.5rem, 0.469rem + 0.249vh, 0.6rem) 0rem;
+            }
         }
     }
 
