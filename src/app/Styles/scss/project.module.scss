@@ -1,0 +1,44 @@
+.projectCont {
+    position: absolute;
+    top: 0; left: 0;
+    overflow: hidden;
+    // display: flex;
+
+    .container {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: nowrap;
+        padding: 4rem 55px 0px 50px;
+
+        .card{
+            // width: 90%;
+            height: 45%;
+
+            .btn{
+                position: absolute;
+                right: 1rem;
+                bottom: 0.5rem;
+            }
+        }
+    }
+}
+
+@media (max-height: 525px),
+(max-width: 660px){
+    .projectCont {
+        .container {
+            padding-left: 0;
+        }
+    }
+}
+
+@media (max-width: 639px),
+(max-height: 450px){
+    .projectCont {
+        .container {
+            padding-right: 0;
+        }
+    }
+}

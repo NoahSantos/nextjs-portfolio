@@ -69,7 +69,7 @@ export default function Scrolling({classes, boxes, section}) {
                             <p className={styles.title}>About Me</p>
                             <div className={styles.content}>
                                 <div className={styles.imageCont}>
-                                    {/* <Image src={about} alt='picture of me' className={styles.img}></Image> */}
+                                    <Image src={about} alt='picture of me' className={styles.img}></Image>
                                 </div>
                                 <p className={styles.aboutMe}>My name is Noah Santos. I was born and raised here in Arizona. I am a senior in high school and am planning to go to ASU for college.</p>
                             </div>
@@ -103,7 +103,7 @@ export default function Scrolling({classes, boxes, section}) {
                                 <p className={styles.hobbyTitle}>Reading</p>
                                 <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`}>
                                     <div className={styles.hobbyImgCont}>
-                                        <Image src={gaming} alt='Reading' className={`${styles.hobbyImg} ${styles.reading}`}></Image>
+                                        <Image src={reading} alt='Reading' className={styles.hobbyImg}></Image>
                                     </div>
                                     <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I&apos;ve recently gotten back into reading, and so far, I have read Enders Game, which I enjoyed a lot. I am curently reading some history books on WW2 right now though.</p>
                                 </div>
