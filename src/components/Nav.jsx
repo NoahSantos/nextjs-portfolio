@@ -130,15 +130,15 @@ export default function Nav() {
             </div>
 
 
-            <div ref={links} className={styles.linkCont}>
-                <ul className={styles.linkList}>
-                    <li><Link className={pathname === '/' ? styles.activeList : styles.list} href='/'>Home</Link></li>
-                    <li><Link className={pathname === '/about' ? styles.activeList : styles.list} href='/about'>About</Link></li>
-                    <li><Link className={pathname === '/resume' ? styles.activeList : styles.list} href='/resume'>Resume</Link></li>
-                    <li><Link className={pathname === '/project' ? styles.activeList : styles.list} href='/project'>Projects</Link></li>
-                </ul>
-            </div>
             <div className={styles.app}>
+                <div ref={links} className={styles.linkCont}>
+                    <ul className={styles.linkList}>
+                        <li><Link className={pathname === '/' ? styles.activeList : styles.list} href='/'>Home</Link></li>
+                        <li><Link className={pathname === '/about' ? styles.activeList : styles.list} href='/about'>About</Link></li>
+                        <li><Link className={pathname === '/resume' ? styles.activeList : styles.list} href='/resume'>Resume</Link></li>
+                        <li><Link className={pathname === '/project' ? styles.activeList : styles.list} href='/project'>Projects</Link></li>
+                    </ul>
+                </div>
                 <div ref={bar} className={styles.navbar}></div>
                 {Array(40).fill(0).map((x, i) => (
                     <div ref={pushRef} className={styles.box} key={i} onClick={openNav}></div>
