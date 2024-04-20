@@ -62,7 +62,7 @@ export default function Page() {
 
       <div className={styles.imageSect}>
         <div ref={img} className={styles.imageCont}>
-          <Image src={image} alt='my image' className={styles.img}></Image>
+          <Image src={image} alt='my image' className={styles.img}/>
         </div>
       </div>
     </div>
