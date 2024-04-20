@@ -17,6 +17,7 @@ export default function Scrolling({classes, boxes, section}) {
     const containerRef = useRef(null);
     const panelRefs = useRef([]);
     let cont = useRef(null);
+    let vertical = useRef([]);
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
@@ -44,6 +45,15 @@ export default function Scrolling({classes, boxes, section}) {
 
         setupHorizontalScroll();
 
+        vertical.current.forEach((ref) =>{
+            console.log(ref)
+            gsap.to(ref, {scrollTrigger: ref, y: 0, duration: 1, ease: "back.inOut(3)", opacity: 1});
+        })
+
+        // gsap.to(`.test`, {scrollTrigger: ".test", x: 0, duration: 1, ease: "power3", opacity: 1});
+        // gsap.to(".cssBar", {scrollTrigger: ".jsBar", width: "70%", duration: 3, ease: "power3" });
+        // gsap.to(".htmlBar", { scrollTrigger: ".jsBar",width: "90%", duration: 3, ease: "power4" });
+
         // Clean up function
         return () => {
             ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -57,11 +67,11 @@ export default function Scrolling({classes, boxes, section}) {
                     <>
                         <div className={`${styles.panel} ${classes[0]}`} ref={el => panelRefs.current.push(el)}>
                             <div className={styles.imageCont}>
-                                <Image src={intro} alt='picture of me' className={styles.img}></Image>
+                                <Image src={intro} alt='picture of me' className={styles.img} ref={el => vertical.current.push(el)}></Image>
                             </div>
                             <div className={styles.nameCont}>
-                                <p className={styles.nameText}>Hi,</p>
-                                <p className={styles.nameText}>I&apos;m Noah</p>
+                                <p className={styles.nameText} ref={ref=>vertical.current.push(ref)}>Hi,</p>
+                                <p className={styles.nameText} ref={ref=>vertical.current.push(ref)}>I&apos;m Noah</p>
                             </div>
                         </div> 
 

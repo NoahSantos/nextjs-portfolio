@@ -27,6 +27,7 @@ body {
     rgb(var(--background-start-rgb)); */
     background-color: #181818;
     overflow-x: hidden;
+    color: white;
 }
 
 ::-webkit-scrollbar {

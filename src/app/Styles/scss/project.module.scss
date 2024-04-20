@@ -16,7 +16,7 @@
         .card{
             margin-top: 1rem;
             width: 31%;
-            height: 20rem;
+            height: 20rem;      
 
             figure{
                 max-width: 65%;
@@ -30,12 +30,15 @@
             .body{
                 position: relative;
                 min-width: 4rem;
+                background-color: #303030;
+                border-radius: 0 1rem 1rem 0;
 
                 .title {
                     position: absolute;
                     left: 1rem;
                     top: 0.5rem;
                     font-size: min(clamp(1rem, -0.24rem + 3.306vh, 1.5rem), clamp(1rem, 0.643rem + 0.952vw, 1.5rem));
+                    padding: 1rem 0.2rem 0 0;
                 }
 
                 .btnCont{

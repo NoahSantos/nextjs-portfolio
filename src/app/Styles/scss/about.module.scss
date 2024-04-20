@@ -24,7 +24,6 @@
                 justify-content: center;
                 align-items: center;
                 padding: 1rem;
-                // background-image: url('../../../../public/images/AboutCropped.JPG');
                 background-size: cover;
 
                 .imageCont {
@@ -37,6 +36,8 @@
                     .img {
                         width: 100%;
                         border-radius: 2rem;
+                        transform: translateY(200px);
+                        opacity: 0;
                         // box-shadow: 0 0 40px 5px #131313e8;
                     }
                 }
