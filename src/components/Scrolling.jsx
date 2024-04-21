@@ -3,6 +3,9 @@ import styles from '../app/Styles/scss/about.module.scss';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import Image from 'next/image';
 import intro from '../../public/images/About.JPG';
 import about from '../../public/images/Noah-Chair.jpeg';
@@ -17,9 +20,15 @@ export default function Scrolling({classes, boxes, section}) {
     const containerRef = useRef(null);
     const panelRefs = useRef([]);
     let cont = useRef(null);
-    let vertical = useRef([]);
+    let horizontal = useRef([]);
+    let horizontalTitle = useRef([]);
+    let verticalTitle = useRef([]);
+    let img = useRef();
+    let text = useRef();
 
     useEffect(() => {
+        AOS.init({})
+
         gsap.registerPlugin(ScrollTrigger);
 
         const setupHorizontalScroll = () => {
@@ -45,14 +54,18 @@ export default function Scrolling({classes, boxes, section}) {
 
         setupHorizontalScroll();
 
-        vertical.current.forEach((ref) =>{
-            console.log(ref)
-            gsap.to(ref, {scrollTrigger: ref, y: 0, duration: 1, ease: "back.inOut(3)", opacity: 1});
-        })
+        gsap.to(img.current, {scrollTrigger: img.current, y: 0, duration: 1, ease: "back.inOut(3)", opacity: 1});
+        gsap.to(text.current, {scrollTrigger: text.current, x: 0, duration: 1, ease: "back.inOut(3)", opacity: 1, delay: 0.5});
 
-        // gsap.to(`.test`, {scrollTrigger: ".test", x: 0, duration: 1, ease: "power3", opacity: 1});
-        // gsap.to(".cssBar", {scrollTrigger: ".jsBar", width: "70%", duration: 3, ease: "power3" });
-        // gsap.to(".htmlBar", { scrollTrigger: ".jsBar",width: "90%", duration: 3, ease: "power4" });
+        verticalTitle.current.forEach((ref) =>{
+            gsap.to(ref, {scrollTrigger: ref, y: 0, duration: 0.5, ease: "back.inOut(3)", opacity: 1});
+        });
+        horizontalTitle.current.forEach((ref) =>{
+            gsap.to(ref, {scrollTrigger: ref, x: 0, duration: 0.7, ease: "back.inOut(3)", opacity: 1});
+        });
+        horizontal.current.forEach((ref) =>{
+            gsap.to(ref, {scrollTrigger: ref, x: 0, duration: 1, ease: "back.inOut(3)", opacity: 1});
+        })
 
         // Clean up function
         return () => {
@@ -63,108 +76,89 @@ export default function Scrolling({classes, boxes, section}) {
     return (
         <div className={`${styles.aboutCont}`} ref={cont}>
             <div className={styles.container} ref={containerRef}>
-                {section === 1 ? 
-                    <>
-                        <div className={`${styles.panel} ${classes[0]}`} ref={el => panelRefs.current.push(el)}>
-                            <div className={styles.imageCont}>
-                                <Image src={intro} alt='picture of me' className={styles.img} ref={el => vertical.current.push(el)}></Image>
-                            </div>
-                            <div className={styles.nameCont}>
-                                <p className={styles.nameText} ref={ref=>vertical.current.push(ref)}>Hi,</p>
-                                <p className={styles.nameText} ref={ref=>vertical.current.push(ref)}>I&apos;m Noah</p>
-                            </div>
-                        </div> 
+                <div className={`${styles.panel} ${classes[0]}`} ref={el => panelRefs.current.push(el)}>
+                    <div className={styles.imageCont}>
+                        <Image src={intro} alt='picture of me' className={styles.img} ref={img}></Image>
+                    </div>
+                    <div className={styles.nameCont} ref={text}>
+                        <p className={styles.nameText}>Hi,</p>
+                        <p className={styles.nameText}>I&apos;m Noah</p>
+                    </div>
+                </div> 
 
-                        <div className={`${styles.panel} ${classes[1]}`} ref={el => panelRefs.current.push(el)}>
-                            <p className={styles.title}>About Me</p>
-                            <div className={styles.content}>
-                                <div className={styles.imageCont}>
-                                    <Image src={about} alt='picture of me' className={styles.img}></Image>
-                                </div>
-                                <p className={styles.aboutMe}>My name is Noah Santos. I was born and raised here in Arizona. I am a senior in high school and am planning to go to ASU for college.</p>
-                            </div>
+                <div className={`${styles.panel} ${classes[1]}`} ref={el => panelRefs.current.push(el)}>
+                    <p className={styles.title} data-aos="fade-down">About Me</p>
+                    <div className={styles.content}>
+                        <div className={styles.imageCont}>
+                            <Image src={about} alt='picture of me' className={styles.img}></Image>
                         </div>
+                        <p className={styles.aboutMe}>My name is Noah Santos. I was born and raised here in Arizona. I am a senior in high school and am planning to go to ASU for college.</p>
+                    </div>
+                </div>
 
-                        <div className={`${styles.panel} ${classes[2]}`} ref={el => panelRefs.current.push(el)}>
-                            <p className={styles.title}>Hobbies</p>
-                            <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
-                                <p className={styles.hobbyTitle}>Gaming</p>
-                                <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`}>
-                                    <div className={styles.hobbyImgCont}>
-                                        <Image src={gaming} alt='Video Game' className={styles.hobbyImg}></Image>
-                                    </div>
-                                    <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I love playing video games, especially strategy games like the Total War franchise. I also play random games like Risk of Rain 2, War Thunder, and Minecraft.</p>
-                                </div>
+                <div className={`${styles.panel} ${classes[2]}`} ref={el => panelRefs.current.push(el)}>
+                    <p className={styles.title} ref={el => verticalTitle.current.push(el)}>Hobbies</p>
+                    <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
+                        <p className={`${styles.hobbyTitle} ${styles.hobbyTitleL}`} ref={el => horizontalTitle.current.push(el)}>Gaming</p>
+                        <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`} ref={ref=>horizontal.current.push(ref)}>
+                            <div className={styles.hobbyImgCont}>
+                                <Image src={gaming} alt='Video Game' className={styles.hobbyImg}></Image>
                             </div>
-                            <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
-                                <p className={styles.hobbyTitle}>History</p>
-                                <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`}>
-                                    <div className={styles.hobbyImgCont}>
-                                        <Image src={history} alt='Tank' className={styles.hobbyImg}></Image>
-                                    </div>
-                                    <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I really like reading and watching videos on history, specifically war-related history. WW2 is my favorite history period, and I love learning about events from the war.</p>
-                                </div>
+                            <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I love playing video games, especially strategy games like the Total War franchise. I also play random games like Risk of Rain 2, War Thunder, and Minecraft.</p>
+                        </div>
+                    </div>
+                    <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
+                        <p className={`${styles.hobbyTitle} ${styles.hobbyTitleR}`} ref={el => horizontalTitle.current.push(el)}>History</p>
+                        <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`} ref={ref=>horizontal.current.push(ref)}>
+                            <div className={styles.hobbyImgCont}>
+                                <Image src={history} alt='Tank' className={styles.hobbyImg}></Image>
                             </div>
+                            <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I really like reading and watching videos on history, specifically war-related history. WW2 is my favorite history period, and I love learning about events from the war.</p>
                         </div>
-                    </> : 
-                    <>
-                        <div className={`${classes[0]} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>
-                            <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
-                                <p className={styles.hobbyTitle}>Reading</p>
-                                <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`}>
-                                    <div className={styles.hobbyImgCont}>
-                                        <Image src={reading} alt='Reading' className={styles.hobbyImg}></Image>
-                                    </div>
-                                    <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I&apos;ve recently gotten back into reading, and so far, I have read Enders Game, which I enjoyed a lot. I am curently reading some history books on WW2 right now though.</p>
-                                </div>
-                            </div>
-                            <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
-                                <p className={styles.hobbyTitle}>Traveling</p>
-                                <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`}>
-                                    <div className={styles.hobbyImgCont}>
-                                        <Image src={travel} alt='Travel' className={styles.hobbyImg}></Image>
-                                    </div>
-                                    <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I don&apos;t go on vacation as much, but from past experiences, I really enjoyed my trip to Hawaii and Japan.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className={`${classes[1]} ${styles.panel}`} ref={el => panelRefs.current.push(el)}>
-                            <div className={styles.first}>2</div>
-                        </div>
-
-                        <div className={`${styles.lastContainer} ${classes[classes.length-1]}`}>
-
-                        </div>
-                    </>
-                }
+                    </div>
+                </div>
             </div>
 
-            {section === 1 ? 
-                <div className={`${styles.lastContainer} ${classes[classes.length-1]}`}>
-                    <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
-                                <p className={styles.hobbyTitle}>Music</p>
-                                <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`}>
-                                    <div className={styles.hobbyImgCont}>
-                                        <Image src={song} alt='Music' className={styles.hobbyImg}></Image>
-                                    </div>
-                                    <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I listen to a lot of genres of music like lo-fi, pop, phonk, metal, and instrumental. I generally go with phonk as that is my favorite.</p>
+            <div className={`${styles.lastContainer} ${classes[classes.length-1]}`}>
+                <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
+                            <p className={`${styles.hobbyTitle} ${styles.hobbyTitleL}`} ref={el => horizontalTitle.current.push(el)}>Music</p>
+                            <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`} ref={ref=>horizontal.current.push(ref)}>
+                                <div className={styles.hobbyImgCont}>
+                                    <Image src={song} alt='Music' className={styles.hobbyImg}></Image>
                                 </div>
+                                <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I listen to a lot of genres of music like lo-fi, pop, phonk, metal, and instrumental. I generally go with phonk as that is my favorite.</p>
                             </div>
-                    <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
-                        <p className={styles.hobbyTitle}>Walking</p>
-                        <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`}>
-                            <div className={styles.hobbyImgCont}>
-                                <Image src={walking} alt='Walking' className={styles.hobbyImg}></Image>
-                            </div>
-                            <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I enjoy going on walks around my community center. It&apos;s fun to look at all the scenery, and it is a great way to clear my head.</p>
                         </div>
-                    </div>    
-                </div> : 
-                <div className={`${styles.lastContainer} ${classes[classes.length-1]}`}>
-                    
+                <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
+                    <p className={`${styles.hobbyTitle} ${styles.hobbyTitleR}`} ref={el => horizontalTitle.current.push(el)}>Walking</p>
+                    <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`} ref={ref=>horizontal.current.push(ref)}>
+                        <div className={styles.hobbyImgCont}>
+                            <Image src={walking} alt='Walking' className={styles.hobbyImg}></Image>
+                        </div>
+                        <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I enjoy going on walks around my community center. It&apos;s fun to look at all the scenery, and it is a great way to clear my head.</p>
+                    </div>
+                </div>    
+            </div>
+            <div className={`${styles.lastContainer} ${classes[classes.length-1]}`}>
+                <div className={`${styles.hobbyCont} ${styles.hobbyContL}`}>
+                    <p className={`${styles.hobbyTitle} ${styles.hobbyTitleL}`} ref={el => horizontalTitle.current.push(el)}>Reading</p>
+                    <div className={`${styles.hobbyContent} ${styles.hobbyContentL}`} ref={ref=>horizontal.current.push(ref)}>
+                        <div className={styles.hobbyImgCont}>
+                            <Image src={reading} alt='Reading' className={styles.hobbyImg}></Image>
+                        </div>
+                        <p className={`${styles.hobbyDesc} ${styles.hobbyDescL}`}>I&apos;ve recently gotten back into reading, and so far, I have read Enders Game, which I enjoyed a lot. I am curently reading some history books on WW2 right now though.</p>
+                    </div>
                 </div>
-            }
+                <div className={`${styles.hobbyCont} ${styles.hobbyContR}`}>
+                    <p className={`${styles.hobbyTitle} ${styles.hobbyTitleR}`} ref={el => horizontalTitle.current.push(el)}>Traveling</p>
+                    <div className={`${styles.hobbyContent} ${styles.hobbyContentR}`} ref={ref=>horizontal.current.push(ref)}>
+                        <div className={styles.hobbyImgCont}>
+                            <Image src={travel} alt='Travel' className={styles.hobbyImg}></Image>
+                        </div>
+                        <p className={`${styles.hobbyDesc} ${styles.hobbyDescR}`}>I don&apos;t go on vacation as much, but from past experiences, I really enjoyed my trip to Hawaii and Japan.</p>
+                    </div>
+                </div>   
+            </div>
         </div>
     );
 }

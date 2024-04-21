@@ -10,7 +10,7 @@ export default function About() {
     return (
         <div className={styles.testCont}>
             <Scrolling classes={classOne} boxes={3} section={1}></Scrolling>
-            <Scrolling classes={classTwo} boxes={2} section={2}></Scrolling>
+            {/* <Scrolling classes={classTwo} boxes={2} section={2}></Scrolling> */}
         </div>
     );
 }
