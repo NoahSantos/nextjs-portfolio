@@ -7,7 +7,7 @@ import 'aos/dist/aos.css';
 
 import AAWL from '../../../public/images/AAWL.png';
 import Social from '../../../public/images/Social Media.png';
-import API from '../../../public/images/Active-Api.png';
+import API from '../../../public/images/Active-API.png';
 import Gamebox from '../../../public/images/Gamebox.png';
 import QuikTek from '../../../public/images/QuikTek.png';
 import Task from '../../../public/images/Cloud-Task.png';
